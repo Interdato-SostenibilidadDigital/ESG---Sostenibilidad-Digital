@@ -581,11 +581,12 @@ h3 {
 
 .cta-section h2 {
   color: var(--ink);
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.45rem, 2.2vw, 2.25rem);
   line-height: 1.05;
 }
 
 .cta-section p {
+  width: 100%;
   max-width: none;
 }
 

@@ -16,7 +16,7 @@
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://interdato-sostenibilidaddigital.github.io/ESG---Sostenibilidad-Digital/">
-    <link rel="stylesheet" href="styles.css?v=20260616-cta2">
+    <link rel="stylesheet" href="styles.css?v=20260616-qr">
   </head>
   <body>
     <header class="site-header">
@@ -396,6 +396,33 @@
         </ol>
       </section>
 
+      <section class="qr-share" aria-labelledby="qr-title-section">
+        <div class="qr-copy">
+          <p class="eyebrow">Comparte la propuesta</p>
+          <h2 id="qr-title-section">Comparte con tus colaboradores.</h2>
+          <p>
+            Escanea o comparte este QR para que equipos de ESG, TI, Finanzas,
+            Compras y Dirección revisen la propuesta desde cualquier dispositivo.
+          </p>
+          <div class="qr-actions" aria-label="Acciones para compartir">
+            <button class="button primary" type="button" data-share-qr>Compartir QR</button>
+            <button class="button secondary" type="button" data-copy-link>Copiar enlace</button>
+            <a class="button secondary" href="assets/qr-code.svg" download="interdato-sostenibilidad-digital-qr.svg">Descargar QR</a>
+          </div>
+          <p class="share-status" data-share-status aria-live="polite"></p>
+        </div>
+        <figure class="qr-card">
+          <img
+            src="assets/qr-code.svg"
+            alt="Código QR para abrir la landing de Sostenibilidad Digital ESG de Interdato"
+            width="220"
+            height="220"
+            loading="lazy"
+          >
+          <figcaption>https://interdato-sostenibilidaddigital.github.io/ESG---Sostenibilidad-Digital/</figcaption>
+        </figure>
+      </section>
+
       <section class="cta-section" aria-labelledby="cta-title">
         <div>
           <p class="eyebrow">Para empresas pioneras del norte de México</p>
@@ -437,5 +464,63 @@
         <a href="tel:+528117924772">811 792 4772</a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const pageUrl = "https://interdato-sostenibilidaddigital.github.io/ESG---Sostenibilidad-Digital/";
+        const shareButton = document.querySelector("[data-share-qr]");
+        const copyButton = document.querySelector("[data-copy-link]");
+        const status = document.querySelector("[data-share-status]");
+
+        const setStatus = (message) => {
+          if (status) status.textContent = message;
+        };
+
+        copyButton?.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(pageUrl);
+            setStatus("Enlace copiado.");
+          } catch {
+            setStatus("No se pudo copiar automáticamente. Selecciona la URL debajo del QR.");
+          }
+        });
+
+        shareButton?.addEventListener("click", async () => {
+          try {
+            const response = await fetch("assets/qr-code.svg");
+            const blob = await response.blob();
+            const file = new File([blob], "interdato-sostenibilidad-digital-qr.svg", {
+              type: "image/svg+xml"
+            });
+            const payloadWithFile = {
+              title: "Interdato | Sostenibilidad digital para ESG",
+              text: "Comparte esta propuesta de sostenibilidad digital ESG.",
+              url: pageUrl,
+              files: [file]
+            };
+
+            if (navigator.canShare?.({ files: [file] })) {
+              await navigator.share(payloadWithFile);
+              setStatus("QR compartido.");
+              return;
+            }
+
+            if (navigator.share) {
+              await navigator.share({
+                title: payloadWithFile.title,
+                text: payloadWithFile.text,
+                url: pageUrl
+              });
+              setStatus("Enlace compartido.");
+              return;
+            }
+
+            await navigator.clipboard.writeText(pageUrl);
+            setStatus("Tu navegador no permite compartir directamente; enlace copiado.");
+          } catch {
+            setStatus("No se pudo abrir el menú de compartir. Puedes descargar el QR o copiar el enlace.");
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

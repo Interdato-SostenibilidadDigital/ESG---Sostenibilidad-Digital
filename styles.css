@@ -594,6 +594,66 @@ h3 {
   font-weight: 900;
 }
 
+.whitepaper-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.4fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(44px, 7vw, 86px) clamp(20px, 6vw, 88px);
+  background:
+    linear-gradient(135deg, rgba(239, 243, 206, 0.78), rgba(249, 244, 237, 0.96)),
+    var(--cream);
+}
+
+.whitepaper-copy {
+  max-width: 840px;
+}
+
+.whitepaper-copy h2 {
+  font-size: clamp(2.1rem, 5vw, 5rem);
+}
+
+.whitepaper-copy p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.whitepaper-panel {
+  padding: clamp(24px, 4vw, 34px);
+  color: var(--cream);
+  background: var(--deep);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.whitepaper-panel span {
+  display: inline-block;
+  margin-bottom: 28px;
+  padding: 7px 10px;
+  color: var(--deep);
+  background: var(--lime);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.whitepaper-panel h3 {
+  color: var(--cream);
+}
+
+.whitepaper-panel p {
+  color: rgba(249, 244, 237, 0.82);
+}
+
+.whitepaper-panel .button {
+  margin-top: 16px;
+  border-color: var(--lime);
+  color: var(--deep);
+  background: var(--lime);
+}
+
 .qr-share {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.36fr);
@@ -748,6 +808,7 @@ h3 {
   .visual-proof,
   .section-heading,
   .starter-flow,
+  .whitepaper-section,
   .qr-share,
   .cta-section {
     grid-template-columns: 1fr;

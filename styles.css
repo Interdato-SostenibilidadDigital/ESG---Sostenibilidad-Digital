@@ -867,7 +867,10 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.7rem, 17vw, 4rem);
+    max-width: 100%;
+    font-size: clamp(2.05rem, 11.5vw, 3rem);
+    line-height: 1;
+    overflow-wrap: break-word;
   }
 
   .hero-actions {

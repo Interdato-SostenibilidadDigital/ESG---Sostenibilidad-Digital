@@ -216,10 +216,35 @@ h3 {
   line-height: 1;
 }
 
+.metric strong sup {
+  margin-left: 3px;
+  color: var(--sage);
+  font-size: 0.28em;
+  vertical-align: super;
+}
+
 .metric span {
   display: block;
   margin-top: 8px;
   color: var(--muted);
+}
+
+.metric-sources {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.metric-sources p {
+  margin: 0 0 8px;
+  color: rgba(87, 87, 96, 0.76);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.metric-sources sup {
+  color: var(--deep);
+  font-weight: 900;
 }
 
 .section {

@@ -118,9 +118,9 @@ nav a:hover,
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("assets/branding/interdato-pattern.png") right -8vw top -16vw / min(86vw, 880px) auto no-repeat;
+  background: url("assets/branding/interdato-pattern.png") right -10vw top -12vw / min(94vw, 960px) auto no-repeat;
   content: "";
-  opacity: 0.32;
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -225,14 +225,14 @@ h3 {
 
 .impact-panel::after {
   position: absolute;
-  top: -54px;
-  right: -48px;
+  top: -46px;
+  right: -42px;
   z-index: 0;
-  width: 190px;
-  height: 190px;
+  width: 210px;
+  height: 210px;
   background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
   content: "";
-  opacity: 0.11;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -652,13 +652,13 @@ h3 {
 
 .whitepaper-section::before {
   position: absolute;
-  inset: auto -8vw -28vw auto;
+  inset: auto -7vw -24vw auto;
   z-index: 0;
-  width: min(78vw, 760px);
+  width: min(82vw, 820px);
   aspect-ratio: 1;
   background: url("assets/branding/interdato-pattern.png") center / contain no-repeat;
   content: "";
-  opacity: 0.22;
+  opacity: 0.82;
   pointer-events: none;
 }
 
@@ -805,11 +805,11 @@ h3 {
   top: 50%;
   right: clamp(18px, 5vw, 56px);
   z-index: 0;
-  width: clamp(120px, 18vw, 210px);
+  width: clamp(140px, 19vw, 230px);
   aspect-ratio: 1;
   background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
   content: "";
-  opacity: 0.12;
+  opacity: 0.18;
   pointer-events: none;
   transform: translateY(-50%) rotate(-8deg);
 }

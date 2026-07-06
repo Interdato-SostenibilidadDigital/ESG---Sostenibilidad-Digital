@@ -36,6 +36,21 @@ a {
   color: inherit;
 }
 
+.hero,
+.whitepaper-section,
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero > *,
+.whitepaper-section > *,
+.cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -97,6 +112,16 @@ nav a:hover,
   background:
     linear-gradient(140deg, rgba(239, 243, 206, 0.82), rgba(249, 244, 237, 0.94) 48%, rgba(123, 160, 156, 0.22)),
     var(--cream);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("assets/branding/interdato-pattern.png") right -8vw top -16vw / min(86vw, 880px) auto no-repeat;
+  content: "";
+  opacity: 0.32;
+  pointer-events: none;
 }
 
 .hero-copy {
@@ -189,11 +214,31 @@ h3 {
 }
 
 .impact-panel {
+  position: relative;
+  overflow: hidden;
   padding: 24px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.impact-panel::after {
+  position: absolute;
+  top: -54px;
+  right: -48px;
+  z-index: 0;
+  width: 190px;
+  height: 190px;
+  background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.11;
+  pointer-events: none;
+}
+
+.impact-panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .panel-topline {
@@ -605,6 +650,18 @@ h3 {
     var(--cream);
 }
 
+.whitepaper-section::before {
+  position: absolute;
+  inset: auto -8vw -28vw auto;
+  z-index: 0;
+  width: min(78vw, 760px);
+  aspect-ratio: 1;
+  background: url("assets/branding/interdato-pattern.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.22;
+  pointer-events: none;
+}
+
 .whitepaper-copy {
   max-width: 840px;
 }
@@ -741,6 +798,20 @@ h3 {
   color: var(--ink);
   background: var(--sage);
   border-radius: 8px;
+}
+
+.cta-section::after {
+  position: absolute;
+  top: 50%;
+  right: clamp(18px, 5vw, 56px);
+  z-index: 0;
+  width: clamp(120px, 18vw, 210px);
+  aspect-ratio: 1;
+  background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.12;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(-8deg);
 }
 
 .cta-section h2 {

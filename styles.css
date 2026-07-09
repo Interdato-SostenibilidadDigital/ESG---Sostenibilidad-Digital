@@ -781,6 +781,20 @@ h3 {
   color: var(--muted);
 }
 
+.modal-stat {
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  color: var(--deep);
+  background: var(--lime);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.modal-stat strong {
+  color: var(--deep);
+}
+
 .modal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -120,7 +120,7 @@ nav a:hover,
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
   gap: clamp(28px, 5vw, 72px);
-  align-items: center;
+  align-items: start;
   padding: clamp(56px, 8vw, 110px) clamp(20px, 6vw, 88px) clamp(42px, 7vw, 86px);
   background:
     linear-gradient(140deg, rgba(239, 243, 206, 0.82), rgba(249, 244, 237, 0.94) 48%, rgba(123, 160, 156, 0.22)),

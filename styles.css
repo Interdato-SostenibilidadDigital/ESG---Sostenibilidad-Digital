@@ -729,7 +729,7 @@ h3 {
 
 .qr-copy h2 {
   color: var(--lime);
-  font-size: 3rem;
+  font-size: 3.65rem;
   line-height: 1;
   white-space: nowrap;
 }
@@ -930,7 +930,7 @@ h3 {
   }
 
   .qr-copy h2 {
-    font-size: 2rem;
+    font-size: 2.65rem;
   }
 }
 
@@ -978,10 +978,16 @@ h3 {
   }
 
   .qr-copy h2 {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
   }
 
   .site-footer {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .qr-copy h2 {
+    font-size: 1.34rem;
   }
 }

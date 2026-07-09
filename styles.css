@@ -81,7 +81,7 @@ a {
 
 .brand {
   display: inline-flex;
-  width: 116px;
+  width: 232px;
 }
 
 .brand img {
@@ -1260,7 +1260,7 @@ h3 {
   }
 
   .brand {
-    width: 96px;
+    width: 192px;
   }
 
   .header-cta {
@@ -1310,6 +1310,10 @@ h3 {
 }
 
 @media (max-width: 380px) {
+  .brand {
+    width: 156px;
+  }
+
   .qr-copy h2 {
     font-size: 1.34rem;
   }

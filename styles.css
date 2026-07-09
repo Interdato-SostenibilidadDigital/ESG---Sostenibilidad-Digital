@@ -596,7 +596,7 @@ h3 {
   border-top: 3px solid var(--lime);
   border-right: 3px solid var(--lime);
   content: "";
-  transform: translateY(-50%) rotate(45deg);
+  transform: translate(50%, -50%) rotate(45deg);
 }
 
 .flow-map span,
@@ -990,8 +990,8 @@ h3 {
     top: auto;
     right: auto;
     bottom: -20px;
-    left: 28px;
-    transform: rotate(135deg);
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
   }
 
   .case-list article {

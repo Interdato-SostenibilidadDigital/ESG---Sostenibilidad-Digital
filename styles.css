@@ -27,6 +27,19 @@ body {
   line-height: 1.55;
 }
 
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 18;
+  background-image: url("assets/branding/interdato-pattern.png");
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: 420px auto;
+  content: "";
+  opacity: 0.055;
+  pointer-events: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -120,7 +133,8 @@ nav a:hover,
   z-index: 0;
   background: url("assets/branding/interdato-pattern.png") right -10vw top -12vw / min(94vw, 960px) auto no-repeat;
   content: "";
-  opacity: 0.9;
+  display: none;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -658,7 +672,8 @@ h3 {
   aspect-ratio: 1;
   background: url("assets/branding/interdato-pattern.png") center / contain no-repeat;
   content: "";
-  opacity: 0.82;
+  display: none;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -944,6 +959,11 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  body::before {
+    background-size: 300px auto;
+    opacity: 0.045;
+  }
+
   .site-header {
     gap: 12px;
     padding: 10px 14px;

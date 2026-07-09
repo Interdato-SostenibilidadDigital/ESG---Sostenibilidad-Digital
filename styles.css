@@ -713,7 +713,7 @@ h3 {
 
 .qr-share {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.36fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.34fr);
   gap: clamp(24px, 5vw, 64px);
   align-items: center;
   padding: clamp(40px, 7vw, 82px) clamp(20px, 6vw, 88px);
@@ -736,6 +736,11 @@ h3 {
 
 .qr-copy p {
   color: rgba(249, 244, 237, 0.84);
+}
+
+.qr-copy .qr-intro {
+  max-width: none;
+  white-space: nowrap;
 }
 
 .qr-actions {
@@ -931,6 +936,10 @@ h3 {
 
   .qr-copy h2 {
     font-size: 2.65rem;
+  }
+
+  .qr-copy .qr-intro {
+    white-space: normal;
   }
 }
 

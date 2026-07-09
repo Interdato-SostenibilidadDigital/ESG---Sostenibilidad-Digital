@@ -383,6 +383,10 @@ h3 {
   color: var(--lime);
 }
 
+#evidencia-title {
+  font-size: clamp(2.8rem, 5.4vw, 5.4rem);
+}
+
 .evidence-band p {
   color: rgba(249, 244, 237, 0.82);
 }

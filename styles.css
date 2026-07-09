@@ -944,6 +944,18 @@ h3 {
     overflow-wrap: break-word;
   }
 
+  .hero {
+    background:
+      linear-gradient(140deg, rgba(249, 244, 237, 0.98), rgba(249, 244, 237, 0.96) 58%, rgba(239, 243, 206, 0.72)),
+      var(--cream);
+  }
+
+  .hero::before {
+    background-position: right -34vw top -16vw;
+    background-size: min(128vw, 560px) auto;
+    opacity: 0.22;
+  }
+
   .hero-actions {
     flex-direction: column;
   }

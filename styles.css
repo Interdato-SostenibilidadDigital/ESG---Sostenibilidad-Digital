@@ -228,6 +228,44 @@ h3 {
   margin-top: 30px;
 }
 
+.hero-certification {
+  display: flex;
+  max-width: 640px;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 12px 14px;
+  color: rgba(249, 244, 237, 0.84);
+  background: rgba(249, 244, 237, 0.08);
+  border: 1px solid rgba(239, 243, 206, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-certification img {
+  width: 52px;
+  height: 76px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.hero-certification strong,
+.hero-certification span {
+  display: block;
+}
+
+.hero-certification strong {
+  margin-bottom: 3px;
+  color: var(--paper);
+  font-weight: 900;
+}
+
+.hero-certification span {
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
 .hero .button.primary {
   border-color: var(--lime);
   color: var(--deep);
@@ -500,6 +538,76 @@ h3 {
   border-radius: 8px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+}
+
+.bcorp-section {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.26fr) minmax(0, 0.74fr);
+  gap: clamp(26px, 5vw, 72px);
+  align-items: stretch;
+  background: var(--paper);
+}
+
+.bcorp-mark {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  padding: clamp(22px, 4vw, 34px);
+  background:
+    linear-gradient(145deg, rgba(39, 74, 70, 0.92), rgba(15, 31, 29, 0.98)),
+    var(--deep);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.bcorp-mark img {
+  width: clamp(116px, 16vw, 164px);
+  border-radius: 6px;
+}
+
+.bcorp-copy {
+  align-self: center;
+}
+
+.bcorp-copy h2 {
+  max-width: 980px;
+  font-size: clamp(2rem, 4.4vw, 4.4rem);
+}
+
+.bcorp-copy > p {
+  max-width: 840px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+
+.bcorp-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.bcorp-principles article {
+  min-height: 170px;
+  padding: 22px;
+  background: var(--cream);
+}
+
+.bcorp-principles strong,
+.bcorp-principles span {
+  display: block;
+}
+
+.bcorp-principles strong {
+  margin-bottom: 18px;
+  color: var(--deep);
+  font-size: 1.05rem;
+}
+
+.bcorp-principles span {
+  color: var(--muted);
 }
 
 .framework {
@@ -1100,6 +1208,21 @@ h3 {
   gap: 12px 20px;
 }
 
+.footer-bcorp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lime);
+  font-weight: 900;
+}
+
+.footer-bcorp img {
+  width: 22px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: auto auto;
@@ -1114,6 +1237,7 @@ h3 {
   .visual-proof,
   .section-heading,
   .starter-flow,
+  .bcorp-section,
   .whitepaper-section,
   .qr-share,
   .cta-section {
@@ -1125,6 +1249,7 @@ h3 {
   .offer-grid,
   .framework-grid,
   .package-grid,
+  .bcorp-principles,
   .starter-steps,
   .timeline,
   .references ul {
@@ -1230,6 +1355,14 @@ h3 {
 
   .modal-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bcorp-mark {
+    min-height: 260px;
+  }
+
+  .hero-certification {
+    align-items: flex-start;
   }
 
   .site-footer {

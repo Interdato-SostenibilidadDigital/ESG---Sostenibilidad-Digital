@@ -102,7 +102,6 @@ nav a,
 }
 
 nav a:hover,
-.header-cta:hover,
 .site-footer a:hover {
   color: var(--lime);
 }
@@ -114,6 +113,12 @@ nav a:hover,
   background: var(--lime);
   border-radius: 999px;
   font-weight: 700;
+  transition: transform 160ms ease;
+}
+
+.header-cta:hover {
+  color: var(--deep);
+  transform: scale(1.06);
 }
 
 .hero {

@@ -239,11 +239,11 @@ h3 {
 
 .impact-panel::after {
   position: absolute;
-  top: -34px;
-  right: -28px;
+  top: -22px;
+  right: -18px;
   z-index: 0;
-  width: 230px;
-  height: 230px;
+  width: 160px;
+  height: 160px;
   background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
   content: "";
   opacity: 0.48;

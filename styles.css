@@ -1085,16 +1085,16 @@ h3 {
 
 .references::after {
   position: absolute;
-  right: clamp(18px, 6vw, 88px);
-  bottom: -54px;
+  top: 50%;
+  left: 50%;
   z-index: 0;
-  width: clamp(160px, 24vw, 300px);
+  width: clamp(180px, 25vw, 320px);
   aspect-ratio: 1;
   background: url("assets/branding/interdato-seal.png") center / contain no-repeat;
   content: "";
-  opacity: 0.12;
+  opacity: 0.34;
   pointer-events: none;
-  transform: rotate(-8deg);
+  transform: translate(-50%, -50%) rotate(-8deg);
 }
 
 .references > * {

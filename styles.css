@@ -167,6 +167,10 @@ h1 {
   letter-spacing: 0;
 }
 
+.title-accent {
+  color: var(--ink);
+}
+
 h2 {
   color: var(--deep);
   font-size: clamp(2rem, 4.2vw, 4rem);
@@ -185,6 +189,11 @@ h3 {
   max-width: 660px;
   color: var(--muted);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.lead strong {
+  color: var(--deep);
+  font-weight: 900;
 }
 
 .hero-actions {

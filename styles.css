@@ -1086,7 +1086,7 @@ h3 {
 .references::after {
   position: absolute;
   top: 50%;
-  left: 50%;
+  right: clamp(20px, 8vw, 120px);
   z-index: 0;
   width: clamp(180px, 25vw, 320px);
   aspect-ratio: 1;
@@ -1094,7 +1094,7 @@ h3 {
   content: "";
   opacity: 0.34;
   pointer-events: none;
-  transform: translate(-50%, -50%) rotate(-8deg);
+  transform: translateY(-50%) rotate(-8deg);
 }
 
 .references > * {

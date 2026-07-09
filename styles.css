@@ -162,7 +162,7 @@ h1 {
   max-width: 920px;
   margin-bottom: 38px;
   color: var(--deep);
-  font-size: clamp(3rem, 8vw, 7.6rem);
+  font-size: clamp(2.8rem, 7.2vw, 6.8rem);
   line-height: 0.92;
   letter-spacing: 0;
 }

@@ -590,13 +590,13 @@ h3 {
 .flow-map li:not(:last-child)::after {
   position: absolute;
   top: 50%;
-  right: -22px;
+  right: -18px;
   width: 16px;
   height: 16px;
   border-top: 3px solid var(--lime);
   border-right: 3px solid var(--lime);
   content: "";
-  transform: translate(50%, -50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .flow-map span,
@@ -989,7 +989,7 @@ h3 {
   .flow-map li:not(:last-child)::after {
     top: auto;
     right: auto;
-    bottom: -20px;
+    bottom: -23px;
     left: 50%;
     transform: translateX(-50%) rotate(135deg);
   }

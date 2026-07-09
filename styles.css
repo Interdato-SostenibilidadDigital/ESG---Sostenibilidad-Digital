@@ -118,8 +118,8 @@ nav a:hover,
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.5fr);
-  gap: clamp(24px, 4vw, 56px);
+  grid-template-columns: minmax(0, 1.85fr) minmax(260px, 0.42fr);
+  gap: clamp(20px, 3vw, 42px);
   align-items: center;
   padding: clamp(56px, 8vw, 110px) clamp(20px, 6vw, 88px) clamp(42px, 7vw, 86px);
   background:
@@ -139,7 +139,7 @@ nav a:hover,
 }
 
 .hero-copy {
-  max-width: 980px;
+  max-width: 1120px;
 }
 
 .eyebrow {
@@ -159,11 +159,11 @@ p {
 }
 
 h1 {
-  max-width: 980px;
+  max-width: 1120px;
   margin-bottom: 22px;
   color: var(--deep);
-  font-size: clamp(3.5rem, 5.4vw, 5.15rem);
-  line-height: 0.9;
+  font-size: clamp(4.1rem, 6.8vw, 6.65rem);
+  line-height: 0.86;
   letter-spacing: 0;
 }
 

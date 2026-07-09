@@ -327,6 +327,10 @@ h3 {
   margin-bottom: 34px;
 }
 
+.section-heading-right h2 {
+  text-align: right;
+}
+
 .three-columns,
 .offer-grid,
 .framework-grid,
@@ -956,6 +960,10 @@ h3 {
 
   .timeline span {
     margin-bottom: 18px;
+  }
+
+  .section-heading-right h2 {
+    text-align: left;
   }
 
   .qr-copy h2 {

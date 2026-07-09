@@ -729,7 +729,9 @@ h3 {
 
 .qr-copy h2 {
   color: var(--lime);
-  font-size: clamp(2rem, 4vw, 4.4rem);
+  font-size: 3rem;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .qr-copy p {
@@ -926,6 +928,10 @@ h3 {
   .timeline span {
     margin-bottom: 18px;
   }
+
+  .qr-copy h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -969,6 +975,10 @@ h3 {
   .button {
     justify-content: center;
     width: 100%;
+  }
+
+  .qr-copy h2 {
+    font-size: 1.4rem;
   }
 
   .site-footer {

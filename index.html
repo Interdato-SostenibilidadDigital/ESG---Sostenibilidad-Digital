@@ -16,7 +16,7 @@
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://interdato-sostenibilidaddigital.github.io/ESG---Sostenibilidad-Digital/">
-    <link rel="stylesheet" href="styles.css?v=20260709-flow-arrows-adjusted">
+    <link rel="stylesheet" href="styles.css?v=20260709-starter-roadmap">
   </head>
   <body>
     <header class="site-header">
@@ -231,26 +231,107 @@
         <div class="starter-flow" aria-labelledby="empezar-title">
           <div>
             <p class="eyebrow">¿Cómo empezar?</p>
-            <h3 id="empezar-title">Una ruta progresiva para madurar sin esperar al reporte anual.</h3>
+            <h3 id="empezar-title">Un plan de implementación para convertir la sostenibilidad digital en evidencia operativa.</h3>
           </div>
           <ol class="starter-steps">
-            <li>
-              <span>Primero</span>
-              <h4>Sitio web sostenible</h4>
-              <p>Crear o ajustar el sitio para que sea ligero, accesible y medible, con una declaración pública de sostenibilidad digital.</p>
+            <li class="starter-step">
+              <button class="starter-card" type="button" data-open-modal="modal-sitio">
+                <span>01</span>
+                <h4>Sitio Web Sostenible</h4>
+                <p>Una presencia digital ligera, accesible y respaldada por una declaración pública.</p>
+                <strong>Ver etapa</strong>
+              </button>
             </li>
-            <li>
-              <span>Después</span>
-              <h4>Medición de emisiones digitales</h4>
-              <p>Implementar un programa que mida emisiones de canales digitales, cloud, hosting, software, hardware y proveedores clave.</p>
+            <li class="starter-step">
+              <button class="starter-card" type="button" data-open-modal="modal-co2e">
+                <span>02</span>
+                <h4>Estimaciones CO₂e digitales</h4>
+                <p>Medición del impacto ambiental de sitios, nube, datos, IA, software y canales digitales.</p>
+                <strong>Ver etapa</strong>
+              </button>
             </li>
-            <li>
-              <span>Finalmente</span>
-              <h4>Estrategia holística</h4>
-              <p>Adoptar buenas prácticas de uso de tecnologías digitales para minimizar impacto ambiental y sostener mejora continua.</p>
+            <li class="starter-step">
+              <button class="starter-card" type="button" data-open-modal="modal-cultura">
+                <span>03</span>
+                <h4>Cultura y seguimiento</h4>
+                <p>Gobierno, responsables, mejora continua y adopción organizacional de la estrategia digital.</p>
+                <strong>Ver etapa</strong>
+              </button>
             </li>
           </ol>
         </div>
+
+        <dialog class="stage-modal" id="modal-sitio" aria-labelledby="modal-sitio-title">
+          <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+          <span class="modal-kicker">Etapa 01</span>
+          <h3 id="modal-sitio-title">Sitio Web Sostenible con declaración de sostenibilidad digital</h3>
+          <p>El sitio web se convierte en la primera prueba visible de compromiso: menos peso, mejor accesibilidad, mayor claridad y una declaración pública que explique cómo se gestiona el impacto digital.</p>
+          <div class="modal-grid">
+            <div>
+              <strong>Entregables</strong>
+              <ul>
+                <li>Diagnóstico de peso, desempeño y accesibilidad.</li>
+                <li>Backlog de optimización para contenido, imágenes y experiencia.</li>
+                <li>Declaración pública de sostenibilidad digital.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Referencias</strong>
+              <ul>
+                <li><a href="https://www.w3.org/TR/web-sustainability-guidelines/" target="_blank" rel="noopener">W3C Web Sustainability Guidelines</a></li>
+                <li><a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener">Sustainable Web Design Model</a></li>
+              </ul>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="stage-modal" id="modal-co2e" aria-labelledby="modal-co2e-title">
+          <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+          <span class="modal-kicker">Etapa 02</span>
+          <h3 id="modal-co2e-title">Estimaciones de impacto CO₂e de actividades digitales</h3>
+          <p>La operación digital se traduce en indicadores: sitios web, software, nube, datos, inteligencia artificial y canales digitales se convierten en estimaciones CO₂e y oportunidades priorizadas.</p>
+          <div class="modal-grid">
+            <div>
+              <strong>Entregables</strong>
+              <ul>
+                <li>Inventario de activos y actividades digitales.</li>
+                <li>Estimaciones CO₂e por canal, servicio o flujo.</li>
+                <li>KPIs ejecutivos y recomendaciones accionables.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Referencias</strong>
+              <ul>
+                <li><a href="https://learn.greensoftware.foundation/introduction/" target="_blank" rel="noopener">Green Software Foundation</a></li>
+                <li><a href="https://ghgprotocol.org/standards-guidance" target="_blank" rel="noopener">GHG Protocol</a></li>
+              </ul>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="stage-modal" id="modal-cultura" aria-labelledby="modal-cultura-title">
+          <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+          <span class="modal-kicker">Etapa 03</span>
+          <h3 id="modal-cultura-title">Cultura organizacional y seguimiento a la estrategia</h3>
+          <p>La sostenibilidad digital deja de ser un diagnóstico aislado y se integra en la operación: responsables, seguimiento, decisiones de arquitectura, compras, contenido, datos y mejora continua.</p>
+          <div class="modal-grid">
+            <div>
+              <strong>Entregables</strong>
+              <ul>
+                <li>Modelo de gobierno y responsables por audiencia.</li>
+                <li>Tablero de seguimiento para ESG, TI y dirección.</li>
+                <li>Ritual operativo para revisar avances y nuevas oportunidades.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Referencias</strong>
+              <ul>
+                <li><a href="https://www.globalreporting.org/standards/" target="_blank" rel="noopener">GRI Standards</a></li>
+                <li><a href="https://www.ifrs.org/sustainability/knowledge-hub/introduction-to-issb-and-ifrs-sustainability-disclosure-standards/" target="_blank" rel="noopener">ISSB Sustainability Disclosure Standards</a></li>
+              </ul>
+            </div>
+          </div>
+        </dialog>
       </section>
 
       <section class="section cases" id="casos" aria-labelledby="casos-title">
@@ -427,10 +508,44 @@
         const shareButton = document.querySelector("[data-share-qr]");
         const copyButton = document.querySelector("[data-copy-link]");
         const status = document.querySelector("[data-share-status]");
+        const modalButtons = document.querySelectorAll("[data-open-modal]");
+        const stageModals = document.querySelectorAll(".stage-modal");
+        let activeModalTrigger = null;
 
         const setStatus = (message) => {
           if (status) status.textContent = message;
         };
+
+        modalButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const modal = document.getElementById(button.dataset.openModal);
+            if (!modal) return;
+
+            activeModalTrigger = button;
+            if (typeof modal.showModal === "function") {
+              modal.showModal();
+            } else {
+              modal.setAttribute("open", "");
+            }
+          });
+        });
+
+        stageModals.forEach((modal) => {
+          modal.addEventListener("click", (event) => {
+            if (event.target === modal) modal.close();
+          });
+
+          modal.addEventListener("close", () => {
+            activeModalTrigger?.focus();
+            activeModalTrigger = null;
+          });
+        });
+
+        document.querySelectorAll("[data-close-modal]").forEach((button) => {
+          button.addEventListener("click", () => {
+            button.closest("dialog")?.close();
+          });
+        });
 
         copyButton?.addEventListener("click", async () => {
           try {

@@ -1361,6 +1361,14 @@ h3 {
     position: absolute;
     top: 24px;
     left: 0;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .starter-card strong {
+    margin-top: 22px;
   }
 
   .case-list article {

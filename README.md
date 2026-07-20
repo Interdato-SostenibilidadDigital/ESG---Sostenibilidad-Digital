@@ -60,3 +60,13 @@ La sostenibilidad digital no es solo una iniciativa tecnica. Es una forma de ope
 ## Implementacion del portafolio
 
 El sitio esta construido con HTML y CSS puro para mantenerlo ligero, facil de auditar y consistente con los principios de sostenibilidad digital de Interdato.
+
+## Whitepaper
+
+La fuente editable del whitepaper se encuentra en `whitepaper/whitepaper-ejecutivo.html`.
+Para regenerar `assets/whitepaper-ejecutivo.pdf` en Windows con Microsoft Edge o Google
+Chrome instalado:
+
+```powershell
+.\scripts\build-whitepaper.ps1
+```

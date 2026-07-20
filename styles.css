@@ -614,12 +614,56 @@ h3 {
   background: var(--paper);
 }
 
+.framework-intro {
+  max-width: 760px;
+  margin: 18px 0 0 auto;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  text-align: right;
+}
+
+.framework-principle {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.2fr) minmax(0, 0.8fr);
+  gap: clamp(18px, 4vw, 48px);
+  align-items: center;
+  margin-bottom: 22px;
+  padding: clamp(22px, 4vw, 34px);
+  color: var(--cream);
+  background: var(--deep);
+  border-radius: 8px;
+}
+
+.framework-principle span {
+  color: var(--lime);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.framework-principle p {
+  margin: 0;
+  color: rgba(249, 244, 237, 0.88);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+}
+
+.framework-principle strong {
+  color: var(--lime);
+}
+
 .framework-grid {
   align-items: stretch;
 }
 
 .framework-grid article {
-  min-height: 360px;
+  min-height: 430px;
+}
+
+.framework-grid article > p {
+  min-height: 72px;
+  margin-bottom: 0;
+  color: var(--muted);
 }
 
 .framework-label,
@@ -645,6 +689,39 @@ h3 {
 .framework-grid li {
   padding-top: 10px;
   border-top: 1px solid var(--line);
+}
+
+.framework-grid li strong {
+  color: var(--deep);
+}
+
+.framework-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(220px, 0.28fr);
+  gap: clamp(18px, 4vw, 42px);
+  margin-top: 22px;
+  padding: 22px 24px;
+  color: var(--muted);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.framework-foot p {
+  margin: 0;
+}
+
+.framework-foot strong,
+.framework-sources a {
+  color: var(--deep);
+}
+
+.framework-sources {
+  font-size: 0.88rem;
+}
+
+.framework-sources a {
+  font-weight: 900;
 }
 
 .flow-section {
@@ -1236,6 +1313,8 @@ h3 {
   .evidence-band,
   .visual-proof,
   .section-heading,
+  .framework-principle,
+  .framework-foot,
   .starter-flow,
   .bcorp-section,
   .whitepaper-section,
@@ -1290,6 +1369,16 @@ h3 {
 
   .section-heading-right h2 {
     text-align: left;
+  }
+
+  .framework-intro {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .framework-grid article,
+  .framework-grid article > p {
+    min-height: 0;
   }
 
   .qr-copy h2 {

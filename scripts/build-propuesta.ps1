@@ -1,11 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$sourcePath = Join-Path $repoRoot 'whitepaper\whitepaper-ejecutivo.html'
-$outputPath = Join-Path $repoRoot 'assets\whitepaper-ejecutivo.pdf'
-$localCopyPath = Join-Path $repoRoot 'Whitepaper ejecutivo.pdf'
-$temporaryPdfPath = Join-Path $env:TEMP "interdato-whitepaper-$PID.pdf"
-$browserProfilePath = Join-Path $env:TEMP "interdato-whitepaper-browser-$PID"
+$sourcePath = Join-Path $repoRoot 'propuesta\propuesta-sostenibilidad-digital.html'
+$outputPath = Join-Path $repoRoot 'assets\propuesta-sostenibilidad-digital.pdf'
+$temporaryPdfPath = Join-Path $env:TEMP "interdato-propuesta-$PID.pdf"
+$browserProfilePath = Join-Path $env:TEMP "interdato-propuesta-browser-$PID"
 
 $browserCandidates = @(
   'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
@@ -41,7 +40,7 @@ $process = Start-Process `
   -WindowStyle Hidden
 
 if ($process.ExitCode -ne 0) {
-  throw "El navegador terminó con código $($process.ExitCode) al generar el whitepaper."
+  throw "El navegador terminó con código $($process.ExitCode) al generar la propuesta."
 }
 
 if (-not (Test-Path -LiteralPath $temporaryPdfPath)) {
@@ -49,7 +48,10 @@ if (-not (Test-Path -LiteralPath $temporaryPdfPath)) {
 }
 
 Copy-Item -LiteralPath $temporaryPdfPath -Destination $outputPath -Force
-Copy-Item -LiteralPath $temporaryPdfPath -Destination $localCopyPath -Force
 
-Write-Output "Whitepaper generado: $outputPath"
-Write-Output "Copia local actualizada: $localCopyPath"
+Remove-Item -LiteralPath $temporaryPdfPath -Force
+if (Test-Path -LiteralPath $browserProfilePath) {
+  Remove-Item -LiteralPath $browserProfilePath -Recurse -Force
+}
+
+Write-Output "Propuesta generada: $outputPath"

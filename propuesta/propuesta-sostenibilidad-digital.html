@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Propuesta de Interdato para adoptar una estrategia integral de sostenibilidad digital en tres etapas."
+    >
+    <title>Propuesta de adopción de sostenibilidad digital | Interdato</title>
+    <style>
+      :root {
+        --deep: #274a46;
+        --deep-2: #173733;
+        --sage: #7ba09c;
+        --cream: #f9f4ed;
+        --lime: #eff3ce;
+        --mist: #edf2ef;
+        --paper: #ffffff;
+        --ink: #233b37;
+        --muted: #596b67;
+        --line: #cdd9d5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--ink);
+        background: #dfe5e3;
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.42;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: var(--deep);
+        text-decoration-color: var(--sage);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        color: var(--deep);
+        line-height: 1.12;
+      }
+
+      h1 {
+        max-width: 165mm;
+        font-size: 31pt;
+        letter-spacing: -0.8pt;
+      }
+
+      h2 {
+        margin-bottom: 5mm;
+        font-size: 21pt;
+        letter-spacing: -0.4pt;
+      }
+
+      h3 {
+        margin-bottom: 2mm;
+        font-size: 13pt;
+      }
+
+      h4 {
+        margin-bottom: 1.5mm;
+        font-size: 10pt;
+      }
+
+      p,
+      ul,
+      ol {
+        margin: 0 0 3.5mm;
+      }
+
+      ul,
+      ol {
+        padding-left: 5mm;
+      }
+
+      li {
+        margin-bottom: 1.5mm;
+      }
+
+      strong {
+        color: var(--deep);
+      }
+
+      .page {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        padding: 0 18mm 7mm;
+        overflow: hidden;
+        background: #f7faf8;
+      }
+
+      .page + .page {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .page-header {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        height: 17mm;
+        margin: 0 -18mm 8mm;
+        padding: 0 18mm;
+        color: var(--cream);
+        background: var(--deep);
+        font-size: 8.5pt;
+      }
+
+      .page-header strong {
+        color: var(--cream);
+        font-size: 11pt;
+      }
+
+      .page-footer {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 2.5mm;
+        color: #63736f;
+        border-top: 0.35mm solid var(--line);
+        font-size: 7.7pt;
+      }
+
+      .eyebrow {
+        margin-bottom: 2.5mm;
+        color: var(--sage);
+        font-size: 8.2pt;
+        font-weight: 800;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        max-width: 166mm;
+        margin-bottom: 6mm;
+        color: #364d48;
+        font-size: 12pt;
+        line-height: 1.48;
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 8.4pt;
+      }
+
+      .grid-2,
+      .grid-3,
+      .benefit-grid {
+        display: grid;
+        gap: 4mm;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 4.2mm;
+        background: var(--paper);
+        border: 0.35mm solid var(--line);
+      }
+
+      .card p:last-child,
+      .callout p:last-child,
+      .note p:last-child {
+        margin-bottom: 0;
+      }
+
+      .number {
+        display: inline-grid;
+        place-items: center;
+        width: 9mm;
+        height: 9mm;
+        margin-bottom: 3mm;
+        color: var(--cream);
+        background: var(--deep);
+        border-radius: 50%;
+        font-size: 8pt;
+        font-weight: 800;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom: 2mm;
+        padding: 1.2mm 2.3mm;
+        color: var(--deep);
+        background: var(--lime);
+        font-size: 7.3pt;
+        font-weight: 800;
+        letter-spacing: 0.4pt;
+        text-transform: uppercase;
+      }
+
+      .callout {
+        margin: 5mm 0;
+        padding: 5mm;
+        color: var(--cream);
+        background: var(--deep);
+      }
+
+      .callout h3,
+      .callout strong {
+        color: var(--lime);
+      }
+
+      .callout .big {
+        margin-bottom: 2mm;
+        color: var(--lime);
+        font-size: 16pt;
+        font-weight: 800;
+        line-height: 1.18;
+      }
+
+      .note {
+        margin: 4mm 0;
+        padding: 4mm 4.5mm;
+        color: #304a45;
+        background: var(--mist);
+        border-left: 1.2mm solid var(--sage);
+      }
+
+      .outcome {
+        margin-top: 4mm;
+        padding: 4mm;
+        background: var(--lime);
+      }
+
+      .outcome strong {
+        display: block;
+        margin-bottom: 1mm;
+      }
+
+      .route {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 3.5mm;
+        margin: 5mm 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .route li {
+        position: relative;
+        min-height: 75mm;
+        margin: 0;
+        padding: 5mm 4.5mm;
+        background: var(--paper);
+        border: 0.35mm solid var(--line);
+      }
+
+      .route li:not(:last-child)::after {
+        position: absolute;
+        top: 17mm;
+        right: -4.2mm;
+        z-index: 2;
+        width: 4.5mm;
+        height: 4.5mm;
+        color: var(--deep);
+        background: var(--lime);
+        border-radius: 50%;
+        content: "›";
+        font-size: 13pt;
+        font-weight: 900;
+        line-height: 3.7mm;
+        text-align: center;
+      }
+
+      .route h3 {
+        min-height: 12mm;
+      }
+
+      .route .result {
+        display: block;
+        margin-top: 4mm;
+        padding-top: 3mm;
+        color: var(--deep);
+        border-top: 0.3mm solid var(--line);
+        font-size: 8.7pt;
+        font-weight: 700;
+      }
+
+      table {
+        width: 100%;
+        margin: 3.5mm 0 4.5mm;
+        border-collapse: collapse;
+        background: var(--paper);
+        font-size: 8.2pt;
+        line-height: 1.32;
+      }
+
+      th,
+      td {
+        padding: 2.7mm 2.8mm;
+        border: 0.25mm solid #d8e0de;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--cream);
+        background: var(--deep);
+        font-size: 7.8pt;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #f0f4f2;
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5mm 7mm;
+        margin: 4mm 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        position: relative;
+        padding-left: 6mm;
+      }
+
+      .checklist li::before {
+        position: absolute;
+        top: 0.4mm;
+        left: 0;
+        width: 3.8mm;
+        height: 3.8mm;
+        color: var(--deep);
+        background: var(--lime);
+        border-radius: 50%;
+        content: "✓";
+        font-size: 7pt;
+        font-weight: 900;
+        line-height: 3.8mm;
+        text-align: center;
+      }
+
+      .deliverables {
+        margin: 3mm 0 5mm;
+        padding: 0;
+        list-style: none;
+        counter-reset: item;
+      }
+
+      .deliverables li {
+        display: grid;
+        grid-template-columns: 8mm 1fr;
+        gap: 3mm;
+        margin: 0;
+        padding: 3mm 0;
+        border-top: 0.3mm solid var(--line);
+        counter-increment: item;
+      }
+
+      .deliverables li::before {
+        display: grid;
+        place-items: center;
+        width: 7mm;
+        height: 7mm;
+        color: var(--cream);
+        background: var(--deep);
+        border-radius: 50%;
+        content: counter(item, decimal-leading-zero);
+        font-size: 6.6pt;
+        font-weight: 800;
+      }
+
+      .cover {
+        display: block;
+        padding: 0;
+        background:
+          radial-gradient(circle at 85% 72%, rgba(239, 243, 206, 0.9) 0 18mm, transparent 18.3mm),
+          linear-gradient(150deg, #f7faf8 0 72%, #edf2ef 72%);
+      }
+
+      .cover-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50mm;
+        padding: 12mm 18mm;
+        color: var(--cream);
+        background: var(--deep);
+      }
+
+      .cover-top strong {
+        display: block;
+        margin-bottom: 1mm;
+        color: var(--cream);
+        font-size: 21pt;
+      }
+
+      .cover-top span {
+        font-size: 11pt;
+      }
+
+      .cover-top img {
+        width: 31mm;
+        height: 31mm;
+        object-fit: contain;
+      }
+
+      .cover-main {
+        padding: 15mm 18mm;
+      }
+
+      .cover-main h1 {
+        margin-bottom: 6mm;
+      }
+
+      .cover-subtitle {
+        max-width: 160mm;
+        color: #344c47;
+        font-size: 14pt;
+        line-height: 1.47;
+      }
+
+      .cover-route {
+        display: flex;
+        gap: 2mm;
+        margin-top: 12mm;
+      }
+
+      .cover-route span {
+        padding: 2.3mm 3.1mm;
+        color: var(--deep);
+        background: var(--lime);
+        font-size: 7.8pt;
+        font-weight: 800;
+      }
+
+      .cover-contact {
+        position: absolute;
+        right: 18mm;
+        bottom: 20mm;
+        left: 18mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      .cover-contact p {
+        margin: 0;
+      }
+
+      .cover-disclaimer {
+        max-width: 118mm;
+        color: #62706d;
+        font-size: 8pt;
+      }
+
+      .benefit-card {
+        min-height: 39mm;
+      }
+
+      .benefit-card .tag {
+        margin-bottom: 2.5mm;
+      }
+
+      .next-step {
+        display: grid;
+        grid-template-columns: 12mm 1fr;
+        gap: 4mm;
+        margin: 0;
+        padding: 4mm 0;
+        border-top: 0.3mm solid var(--line);
+      }
+
+      .next-step span {
+        display: grid;
+        place-items: center;
+        width: 10mm;
+        height: 10mm;
+        color: var(--cream);
+        background: var(--deep);
+        border-radius: 50%;
+        font-size: 8pt;
+        font-weight: 800;
+      }
+
+      .source-list {
+        margin: 3mm 0 0;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        font-size: 7.7pt;
+        line-height: 1.28;
+      }
+
+      .source-list li {
+        margin-bottom: 2.2mm;
+        padding-bottom: 2mm;
+        border-bottom: 0.25mm solid var(--line);
+      }
+
+      .source-list a {
+        overflow-wrap: anywhere;
+      }
+
+      @media print {
+        html,
+        body {
+          background: transparent;
+        }
+
+        .page {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page cover">
+      <div class="cover-top">
+        <div>
+          <strong>Interdato</strong>
+          <span>Sostenibilidad Digital y ESG</span>
+        </div>
+        <img src="../assets/branding/interdato-seal.png" alt="">
+      </div>
+      <div class="cover-main">
+        <p class="eyebrow">Propuesta de adopción</p>
+        <h1>Sostenibilidad digital para su organización</h1>
+        <p class="cover-subtitle">
+          Una ruta clara en tres etapas para hacer más eficiente la operación digital,
+          estimar su impacto ambiental y construir una cultura de mejora continua.
+        </p>
+        <div class="cover-route" aria-label="Tres etapas de adopción">
+          <span>1 · Infraestructura web</span>
+          <span>2 · Estimaciones de CO₂e</span>
+          <span>3 · Cultura y estrategia</span>
+        </div>
+      </div>
+      <div class="cover-contact">
+        <p class="cover-disclaimer">
+          Propuesta ejecutiva de alcance preliminar. El plan final se adapta al contexto,
+          prioridades y madurez digital de cada organización.
+        </p>
+        <div>
+          <p><strong>interdato.com</strong></p>
+          <p>contacto@interdato.com</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Propuesta de adopción de sostenibilidad digital</span>
+      </header>
+      <p class="eyebrow">¿Cómo empezar?</p>
+      <h2>Una adopción progresiva, visible y medible</h2>
+      <p class="lead">
+        La sostenibilidad digital se construye conectando tecnología, impacto ambiental y
+        hábitos de trabajo. Por eso proponemos una ruta de tres etapas que comienza con una
+        evidencia concreta, amplía la medición y finalmente integra la mejora en la organización.
+      </p>
+
+      <ol class="route">
+        <li>
+          <span class="number">01</span>
+          <h3>Infraestructura web</h3>
+          <p>Sitio web accesible y eficiente, estimación de CO₂e por visita e incorporación del Distintivo EcoWebCO2.</p>
+          <span class="result">Resultado: una primera evidencia pública y comprensible.</span>
+        </li>
+        <li>
+          <span class="number">02</span>
+          <h3>Estimaciones de CO₂e</h3>
+          <p>Diagnóstico de infraestructura digital, estimación de su huella e identificación de oportunidades.</p>
+          <span class="result">Resultado: una línea base para priorizar decisiones.</span>
+        </li>
+        <li>
+          <span class="number">03</span>
+          <h3>Cultura y estrategia</h3>
+          <p>Seguimiento, adopción y cultura organizacional para operar de manera más eficiente.</p>
+          <span class="result">Resultado: capacidades internas y mejora continua.</span>
+        </li>
+      </ol>
+
+      <div class="callout">
+        <p class="big">No es una iniciativa aislada de TI.</p>
+        <p>
+          Es una estrategia que conecta a Sostenibilidad, Tecnología, Finanzas, Compras,
+          Comunicación, Experiencia Digital y Dirección alrededor de objetivos compartidos.
+        </p>
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>02</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Etapa 01 · Infraestructura web</span>
+      </header>
+      <p class="eyebrow">Primera evidencia visible</p>
+      <h2>Un sitio web accesible, eficiente y responsable</h2>
+      <p class="lead">
+        El sitio web es un punto de partida práctico: concentra contenido, tecnología y
+        experiencia de usuario en un activo visible para clientes, colaboradores y otras
+        audiencias de la organización.
+      </p>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Qué se revisa</span>
+          <h3>Desempeño y accesibilidad</h3>
+          <p>
+            Peso de página, recursos, tiempos de carga, experiencia móvil y barreras de
+            accesibilidad que afectan tanto a las personas como a la eficiencia del sitio.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">Qué se estima</span>
+          <h3>CO₂e por visita</h3>
+          <p>
+            Una referencia del impacto climático de cada visita web para establecer una línea
+            base, comparar mejoras y comunicar el avance con claridad.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">Qué se mejora</span>
+          <h3>Contenido y tecnología</h3>
+          <p>
+            Acciones priorizadas para optimizar imágenes, recursos, recorridos y componentes
+            que generan transferencia o complejidad innecesaria.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">Qué se comunica</span>
+          <h3>Distintivo EcoWebCO2</h3>
+          <p>
+            Una señal visible del compromiso y del trabajo realizado para ofrecer una
+            experiencia web más eficiente y accesible.
+          </p>
+        </article>
+      </div>
+
+      <div class="outcome">
+        <strong>La organización obtiene</strong>
+        Un diagnóstico del sitio, una estimación de CO₂e por visita, prioridades de mejora y
+        la incorporación del Distintivo EcoWebCO2 conforme al alcance acordado.
+      </div>
+
+      <div class="note">
+        <p>
+          <strong>Valor inmediato:</strong> mejora la experiencia digital, reduce recursos
+          innecesarios y crea una primera evidencia fácil de entender dentro de la estrategia.
+        </p>
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>03</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Etapa 02 · Estimaciones de CO₂e</span>
+      </header>
+      <p class="eyebrow">Diagnóstico de la operación digital</p>
+      <h2>De activos dispersos a una visión de impacto</h2>
+      <p class="lead">
+        La segunda etapa amplía la mirada más allá del sitio web. El objetivo es comprender
+        qué componentes de la operación digital son relevantes, estimar su huella de CO₂e e
+        identificar dónde conviene actuar primero.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Área digital</th>
+            <th>Ejemplos que pueden incorporarse</th>
+            <th>Pregunta que ayuda a responder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Web y canales</strong></td>
+            <td>Sitios, portales, comercio electrónico, campañas y contenido.</td>
+            <td>¿Qué experiencias concentran mayor uso o transferencia?</td>
+          </tr>
+          <tr>
+            <td><strong>Nube y software</strong></td>
+            <td>Hosting, servicios cloud, SaaS, aplicaciones y ambientes digitales.</td>
+            <td>¿Qué servicios son prioritarios por escala, consumo o relevancia?</td>
+          </tr>
+          <tr>
+            <td><strong>Datos e IA</strong></td>
+            <td>Almacenamiento, procesamiento, analítica, automatización y modelos.</td>
+            <td>¿Dónde existen cargas, datos o procesos que pueden optimizarse?</td>
+          </tr>
+          <tr>
+            <td><strong>Equipos y proveedores</strong></td>
+            <td>Hardware, vida útil, adquisiciones y servicios tecnológicos contratados.</td>
+            <td>¿Qué decisiones de compra o uso pueden mejorar el desempeño?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="number">01</span>
+          <h3>Delimitar</h3>
+          <p>Definir las actividades, activos y periodos relevantes para la organización.</p>
+        </article>
+        <article class="card">
+          <span class="number">02</span>
+          <h3>Estimar</h3>
+          <p>Construir una línea base con los datos disponibles y dejar claros sus alcances.</p>
+        </article>
+        <article class="card">
+          <span class="number">03</span>
+          <h3>Priorizar</h3>
+          <p>Convertir los hallazgos en oportunidades y decisiones para los equipos.</p>
+        </article>
+      </div>
+
+      <div class="note">
+        <p>
+          El alcance se define según materialidad, disponibilidad de información y utilidad
+          para la toma de decisiones. No todas las organizaciones necesitan medir todo al inicio.
+        </p>
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>04</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Etapa 02 · Resultados para la organización</span>
+      </header>
+      <p class="eyebrow">Una línea base útil</p>
+      <h2>Información para decidir, mejorar y comunicar</h2>
+      <p class="lead">
+        La estimación no se plantea como una cifra aislada. Se presenta con el contexto
+        necesario para que la organización comprenda qué representa, dónde están las
+        oportunidades y cómo puede incorporarla a su gestión ESG.
+      </p>
+
+      <div class="grid-2">
+        <div>
+          <h3>Resultados esperados</h3>
+          <ol class="deliverables">
+            <li><div><strong>Diagnóstico de infraestructura digital</strong><br>Visión ejecutiva de los activos y actividades relevantes.</div></li>
+            <li><div><strong>Estimaciones de CO₂e</strong><br>Línea base organizada por las categorías priorizadas.</div></li>
+            <li><div><strong>Áreas de oportunidad</strong><br>Hallazgos vinculados con eficiencia, uso, compra o diseño.</div></li>
+            <li><div><strong>Prioridades de acción</strong><br>Recomendaciones ordenadas por valor y viabilidad.</div></li>
+            <li><div><strong>Resumen ejecutivo</strong><br>Resultados comprensibles para ESG, TI y Dirección.</div></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Principios de trabajo</h3>
+          <article class="card">
+            <span class="tag">Alcance claro</span>
+            <p>Se explican los límites, el periodo y las categorías consideradas.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Consistencia</span>
+            <p>La línea base permite dar seguimiento a avances con criterios comparables.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Transparencia</span>
+            <p>Los resultados distinguen datos disponibles, estimaciones y supuestos relevantes.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Utilidad</span>
+            <p>La información se orienta a decisiones y no solamente al reporte.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p class="big">El valor está en convertir la huella en prioridades.</p>
+        <p>
+          La organización obtiene una visión inicial para reducir ineficiencias, mejorar
+          decisiones tecnológicas y fortalecer la conversación entre ESG y las áreas digitales.
+        </p>
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>05</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Etapa 03 · Cultura y estrategia</span>
+      </header>
+      <p class="eyebrow">De la medición a la adopción</p>
+      <h2>Una estrategia que pueda operar la organización</h2>
+      <p class="lead">
+        Para sostener los avances, los equipos necesitan criterios comunes, responsabilidades
+        claras y hábitos de seguimiento. La tercera etapa integra la sostenibilidad digital en
+        la forma de diseñar, comprar, administrar y mejorar la tecnología.
+      </p>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Estrategia</span>
+          <h3>Objetivos y prioridades</h3>
+          <p>Definición de una ruta de adopción conectada con los retos y compromisos de la organización.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Responsabilidad</span>
+          <h3>Roles y coordinación</h3>
+          <p>Claridad sobre quién observa los indicadores, quién decide y quién ejecuta las mejoras.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Cultura</span>
+          <h3>Programa organizacional</h3>
+          <p>Sesiones y recursos para que los equipos incorporen prácticas digitales más eficientes.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Seguimiento</span>
+          <h3>Mejora continua</h3>
+          <p>Rutinas para revisar avances, detectar nuevas oportunidades y mantener vigente la estrategia.</p>
+        </article>
+      </div>
+
+      <h3 style="margin-top: 6mm;">Equipos que pueden participar</h3>
+      <ul class="checklist">
+        <li>Sostenibilidad y ESG</li>
+        <li>Tecnología y arquitectura</li>
+        <li>Finanzas y compras</li>
+        <li>Datos e inteligencia artificial</li>
+        <li>Marketing y comunicación</li>
+        <li>Experiencia digital y accesibilidad</li>
+        <li>Recursos humanos y cultura</li>
+        <li>Dirección y gobierno corporativo</li>
+      </ul>
+
+      <div class="outcome">
+        <strong>La organización obtiene</strong>
+        Una estrategia de seguimiento y adopción, responsables, indicadores y un programa de
+        cultura para operar de manera más eficiente y mantener la mejora en el tiempo.
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>06</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato · ESG</strong>
+        <span>Beneficios organizacionales</span>
+      </header>
+      <p class="eyebrow">Valor más allá de la medición</p>
+      <h2>Decisiones digitales con beneficios para la organización</h2>
+      <p class="lead">
+        La adopción conecta resultados ambientales con eficiencia, gestión, cultura y
+        credibilidad. Los beneficios concretos dependen del alcance y del punto de partida
+        de cada organización.
+      </p>
+
+      <div class="benefit-grid">
+        <article class="card benefit-card">
+          <span class="tag">Ambiental</span>
+          <h3>Visibilidad del impacto</h3>
+          <p>Comprender la huella digital e identificar oportunidades para reducir consumo, transferencia y recursos innecesarios.</p>
+        </article>
+        <article class="card benefit-card">
+          <span class="tag">Operativo</span>
+          <h3>Mayor eficiencia</h3>
+          <p>Priorizar mejoras en sitios, servicios, datos, equipos y proveedores con una mirada común.</p>
+        </article>
+        <article class="card benefit-card">
+          <span class="tag">Social</span>
+          <h3>Mejor experiencia digital</h3>
+          <p>Fortalecer accesibilidad, desempeño y calidad para las personas que utilizan los canales de la organización.</p>
+        </article>
+        <article class="card benefit-card">
+          <span class="tag">Gobernanza</span>
+          <h3>Responsables y seguimiento</h3>
+          <p>Asignar objetivos, indicadores y espacios de decisión que den continuidad a las acciones.</p>
+        </article>
+        <article class="card benefit-card">
+          <span class="tag">Estratégico</span>
+          <h3>Mejores criterios de inversión</h3>
+          <p>Incorporar sostenibilidad digital en decisiones de diseño, arquitectura, compra y contratación.</p>
+        </article>
+        <article class="card benefit-card">
+          <span class="tag">Reputación</span>
+          <h3>Comunicación con evidencia</h3>
+          <p>Explicar avances con un alcance claro y evitar mensajes ambientales sin sustento suficiente.</p>
+        </article>
+      </div>
+
+      <div class="callout">
+        <p class="big">Medir mejor para operar mejor.</p>
+        <p>
+          El objetivo final es que la sostenibilidad digital se convierta en una capacidad
+          organizacional: visible en los canales, útil para decidir y sostenible en el tiempo.
+        </p>
+      </div>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>07</span>
+      </footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header">
+        <strong>Interdato</strong>
+        <span>Siguiente paso</span>
+      </header>
+      <p class="eyebrow">Una ruta adaptada a su realidad</p>
+      <h2>Comencemos por definir el punto de partida</h2>
+      <p class="lead">
+        Cada organización tiene una infraestructura, una disponibilidad de datos y una madurez
+        diferentes. Una conversación inicial permite acordar prioridades y convertir esta ruta
+        en un plan de trabajo adecuado.
+      </p>
+
+      <div class="next-step">
+        <span>01</span>
+        <div>
+          <h3>Conversación de contexto</h3>
+          <p>Conocer objetivos, equipos involucrados, activos digitales prioritarios y necesidades ESG.</p>
+        </div>
+      </div>
+      <div class="next-step">
+        <span>02</span>
+        <div>
+          <h3>Definición de alcance</h3>
+          <p>Acordar la etapa de inicio, los resultados esperados y la información disponible.</p>
+        </div>
+      </div>
+      <div class="next-step">
+        <span>03</span>
+        <div>
+          <h3>Plan de adopción</h3>
+          <p>Establecer actividades, responsables, entregables y una secuencia realista de implementación.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h3>Hablemos de sostenibilidad digital</h3>
+        <p>
+          <strong>Interdato</strong><br>
+          contacto@interdato.com · +52 81 1792 4772<br>
+          <a href="https://interdato.com" style="color: #eff3ce;">interdato.com</a>
+        </p>
+      </div>
+
+      <h3>Referencias que orientan la propuesta</h3>
+      <ul class="source-list">
+        <li><strong>W3C.</strong> Web Sustainability Guidelines. <a href="https://www.w3.org/TR/web-sustainability-guidelines/">w3.org/TR/web-sustainability-guidelines/</a></li>
+        <li><strong>Sustainable Web Design.</strong> Estimating digital emissions. <a href="https://sustainablewebdesign.org/estimating-digital-emissions/">sustainablewebdesign.org/estimating-digital-emissions/</a></li>
+        <li><strong>GHG Protocol.</strong> Standards and Guidance. <a href="https://ghgprotocol.org/standards-guidance">ghgprotocol.org/standards-guidance</a></li>
+        <li><strong>Green Software Foundation.</strong> Introduction to Green Software. <a href="https://learn.greensoftware.foundation/introduction/">learn.greensoftware.foundation/introduction/</a></li>
+      </ul>
+
+      <p class="small" style="margin-top: 3mm;">
+        Este documento presenta un alcance preliminar y no sustituye una propuesta comercial,
+        un inventario corporativo de GEI, asesoría regulatoria ni aseguramiento independiente.
+      </p>
+      <footer class="page-footer">
+        <span>Propuesta de adopción · Interdato</span><span>08</span>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -61,6 +61,20 @@ La sostenibilidad digital no es solo una iniciativa tecnica. Es una forma de ope
 
 El sitio esta construido con HTML y CSS puro para mantenerlo ligero, facil de auditar y consistente con los principios de sostenibilidad digital de Interdato.
 
+## Presupuesto de rendimiento
+
+Para evitar regresiones, cada cambio debe mantener estos limites, medidos con cache vacia y
+sin incluir descargas iniciadas por el usuario:
+
+- Carga inicial transferida: maximo 175 KB.
+- Pagina completa despues de recorrerla: maximo 300 KB.
+- Propuesta PDF: maximo 250 KB.
+- Dependencias JavaScript de ejecucion: ninguna mientras las APIs nativas cubran la funcionalidad.
+
+Las imagenes deben publicarse con dimensiones acordes a su uso, formatos modernos cuando
+aporten una reduccion real y un respaldo compatible. Los recursos secundarios deben conservar
+carga diferida.
+
 ## Propuesta descargable
 
 La fuente editable de la propuesta se encuentra en `propuesta/propuesta-sostenibilidad-digital.html`.

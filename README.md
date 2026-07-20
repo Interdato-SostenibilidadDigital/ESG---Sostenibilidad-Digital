@@ -34,24 +34,24 @@ Incluir sostenibilidad digital dentro de ESG permite pasar de una narrativa gene
 
 ```mermaid
 flowchart LR
-  A["1. Sitio Web Sostenible<br/>con declaracion de sostenibilidad digital"]
-  B["2. Estimaciones de impacto CO2e<br/>de actividades digitales"]
-  C["3. Cultura Organizacional<br/>y seguimiento a la estrategia de sostenibilidad digital"]
+  A["1. Infraestructura web<br/>accesible y eficiente"]
+  B["2. Estimaciones de CO2e<br/>de la operacion digital"]
+  C["3. Cultura y estrategia<br/>de adopcion"]
 
   A --> B --> C
 ```
 
-### 1. Sitio Web Sostenible con declaracion de sostenibilidad digital
+### 1. Infraestructura web
 
-El primer paso es convertir el sitio web en una prueba visible de compromiso: una experiencia ligera, accesible, eficiente y respaldada por una declaracion publica de sostenibilidad digital.
+El primer paso es contar con un sitio web accesible y eficiente, estimar el CO2e por visita e incorporar el Distintivo EcoWebCO2.
 
-### 2. Estimaciones de impacto CO2e de actividades digitales
+### 2. Estimaciones de CO2e
 
-El segundo paso es estimar el impacto ambiental de la operacion digital, incluyendo sitios web, software, nube, datos, inteligencia artificial y canales digitales. Estas estimaciones permiten crear KPIs, detectar oportunidades de mejora y priorizar acciones.
+El segundo paso es diagnosticar la infraestructura digital, estimar la huella de CO2e de los activos y actividades digitales e identificar areas de oportunidad.
 
-### 3. Cultura Organizacional y Seguimiento a la Estrategia de Sostenibilidad Digital
+### 3. Cultura y estrategia
 
-El tercer paso es integrar la sostenibilidad digital en la cultura y operacion diaria: responsables, seguimiento, indicadores, recomendaciones accionables y mejora continua alineada con la estrategia ESG.
+El tercer paso es definir una estrategia de seguimiento y adopcion, junto con un programa de cultura organizacional para operar de manera mas eficiente.
 
 ## Mensaje central
 
@@ -61,12 +61,12 @@ La sostenibilidad digital no es solo una iniciativa tecnica. Es una forma de ope
 
 El sitio esta construido con HTML y CSS puro para mantenerlo ligero, facil de auditar y consistente con los principios de sostenibilidad digital de Interdato.
 
-## Whitepaper
+## Propuesta descargable
 
-La fuente editable del whitepaper se encuentra en `whitepaper/whitepaper-ejecutivo.html`.
-Para regenerar `assets/whitepaper-ejecutivo.pdf` en Windows con Microsoft Edge o Google
+La fuente editable de la propuesta se encuentra en `propuesta/propuesta-sostenibilidad-digital.html`.
+Para regenerar `assets/propuesta-sostenibilidad-digital.pdf` en Windows con Microsoft Edge o Google
 Chrome instalado:
 
 ```powershell
-.\scripts\build-whitepaper.ps1
+.\scripts\build-propuesta.ps1
 ```

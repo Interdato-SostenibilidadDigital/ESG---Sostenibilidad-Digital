@@ -50,7 +50,7 @@ a {
 }
 
 .hero,
-.whitepaper-section,
+.proposal-section,
 .cta-section {
   position: relative;
   overflow: hidden;
@@ -58,7 +58,7 @@ a {
 }
 
 .hero > *,
-.whitepaper-section > *,
+.proposal-section > *,
 .cta-section > * {
   position: relative;
   z-index: 1;
@@ -1021,7 +1021,7 @@ h3 {
   font-weight: 900;
 }
 
-.whitepaper-section {
+.proposal-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.4fr);
   gap: clamp(24px, 5vw, 64px);
@@ -1032,7 +1032,7 @@ h3 {
     var(--cream);
 }
 
-.whitepaper-section::before {
+.proposal-section::before {
   position: absolute;
   inset: auto -7vw -24vw auto;
   z-index: 0;
@@ -1045,21 +1045,21 @@ h3 {
   pointer-events: none;
 }
 
-.whitepaper-copy {
+.proposal-copy {
   max-width: 840px;
 }
 
-.whitepaper-copy h2 {
+.proposal-copy h2 {
   font-size: clamp(2.1rem, 5vw, 5rem);
 }
 
-.whitepaper-copy p {
+.proposal-copy p {
   max-width: 760px;
   color: var(--muted);
   font-size: clamp(1rem, 1.6vw, 1.2rem);
 }
 
-.whitepaper-panel {
+.proposal-panel {
   padding: clamp(24px, 4vw, 34px);
   color: var(--cream);
   background: var(--deep);
@@ -1067,7 +1067,7 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.whitepaper-panel span {
+.proposal-panel span {
   display: inline-block;
   margin-bottom: 28px;
   padding: 7px 10px;
@@ -1079,15 +1079,15 @@ h3 {
   letter-spacing: 0.08em;
 }
 
-.whitepaper-panel h3 {
+.proposal-panel h3 {
   color: var(--cream);
 }
 
-.whitepaper-panel p {
+.proposal-panel p {
   color: rgba(249, 244, 237, 0.82);
 }
 
-.whitepaper-panel .button {
+.proposal-panel .button {
   margin-top: 16px;
   border-color: var(--lime);
   color: var(--deep);
@@ -1325,7 +1325,7 @@ h3 {
   .framework-foot,
   .starter-flow,
   .bcorp-section,
-  .whitepaper-section,
+  .proposal-section,
   .qr-share,
   .cta-section {
     grid-template-columns: 1fr;

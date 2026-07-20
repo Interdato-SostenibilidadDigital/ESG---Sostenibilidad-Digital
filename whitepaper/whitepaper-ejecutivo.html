@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emisiones digitales en ESG | Interdato</title>
+    <style>
+      :root {
+        --deep: #274a46;
+        --sage: #7ba09c;
+        --cream: #f9f4ed;
+        --lime: #eff3ce;
+        --mist: #eef1ea;
+        --paper: #ffffff;
+        --muted: #575760;
+        --line: #cdd8d5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: #243a37;
+        background: #dfe5e3;
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.42;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        counter-reset: pages;
+      }
+
+      a {
+        color: var(--deep);
+        text-decoration-color: var(--sage);
+      }
+
+      p,
+      ul,
+      ol {
+        margin: 0 0 3.5mm;
+      }
+
+      ul,
+      ol {
+        padding-left: 5mm;
+      }
+
+      li {
+        margin-bottom: 1.6mm;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        color: var(--deep);
+        line-height: 1.12;
+      }
+
+      h1 {
+        font-size: 31pt;
+        letter-spacing: -0.8pt;
+      }
+
+      h2 {
+        margin-bottom: 5mm;
+        font-size: 20pt;
+        letter-spacing: -0.35pt;
+      }
+
+      h3 {
+        margin-bottom: 2mm;
+        font-size: 12.5pt;
+      }
+
+      h4 {
+        margin-bottom: 1.4mm;
+        font-size: 10pt;
+      }
+
+      strong {
+        color: var(--deep);
+      }
+
+      .page {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        padding: 0 19mm 7mm;
+        overflow: hidden;
+        background: #f7faf8;
+        break-after: auto;
+        page-break-after: auto;
+      }
+
+      .page + .page {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .page-header {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        height: 17mm;
+        margin: 0 -19mm 8mm;
+        padding: 0 19mm;
+        color: var(--cream);
+        background: var(--deep);
+        font-size: 8.5pt;
+      }
+
+      .page-header strong {
+        color: var(--cream);
+        font-size: 11pt;
+      }
+
+      .page-footer {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 2.5mm;
+        color: #63736f;
+        border-top: 0.35mm solid var(--line);
+        font-size: 7.7pt;
+      }
+
+      .eyebrow {
+        margin-bottom: 2.5mm;
+        color: var(--sage);
+        font-size: 8.3pt;
+        font-weight: 800;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-bottom: 6mm;
+        color: #364c48;
+        font-size: 12pt;
+        line-height: 1.45;
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 8.5pt;
+      }
+
+      .note {
+        padding: 4mm 4.5mm;
+        color: #304a45;
+        background: var(--mist);
+        border: 0.35mm solid #a9c1bb;
+      }
+
+      .note p:last-child,
+      .card p:last-child,
+      .callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      .callout {
+        margin: 5mm 0;
+        padding: 5mm;
+        color: var(--cream);
+        background: var(--deep);
+      }
+
+      .callout strong,
+      .callout h3 {
+        color: var(--lime);
+      }
+
+      .callout .big {
+        margin-bottom: 2mm;
+        color: var(--lime);
+        font-size: 17pt;
+        font-weight: 800;
+        line-height: 1.15;
+      }
+
+      .grid-2,
+      .grid-3,
+      .metrics-grid,
+      .phase-grid {
+        display: grid;
+        gap: 4mm;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .phase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 4mm;
+        background: var(--paper);
+        border: 0.35mm solid var(--line);
+      }
+
+      .card-number {
+        display: inline-grid;
+        place-items: center;
+        width: 8mm;
+        height: 8mm;
+        margin-bottom: 3mm;
+        color: var(--cream);
+        background: var(--deep);
+        border-radius: 50%;
+        font-size: 8pt;
+        font-weight: 800;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom: 2.2mm;
+        padding: 1.1mm 2.2mm;
+        color: var(--deep);
+        background: var(--lime);
+        font-size: 7.4pt;
+        font-weight: 800;
+        letter-spacing: 0.45pt;
+        text-transform: uppercase;
+      }
+
+      .steps {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 9mm 1fr;
+        gap: 3mm;
+        align-items: start;
+        padding: 3mm 0;
+        border-top: 0.3mm solid var(--line);
+      }
+
+      .steps li:first-child {
+        border-top: 0;
+      }
+
+      .steps span {
+        display: grid;
+        place-items: center;
+        width: 8mm;
+        height: 8mm;
+        color: var(--cream);
+        background: var(--deep);
+        border-radius: 50%;
+        font-size: 7.5pt;
+        font-weight: 800;
+      }
+
+      table {
+        width: 100%;
+        margin: 3.5mm 0 4.5mm;
+        border-collapse: collapse;
+        background: var(--paper);
+        font-size: 8.2pt;
+        line-height: 1.3;
+      }
+
+      th,
+      td {
+        padding: 2.6mm 2.8mm;
+        border: 0.25mm solid #d8e0de;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--cream);
+        background: var(--deep);
+        font-size: 7.8pt;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #f0f4f2;
+      }
+
+      .scope {
+        white-space: nowrap;
+        color: var(--deep);
+        font-weight: 800;
+      }
+
+      .result-table td:last-child,
+      .result-table th:last-child {
+        width: 20mm;
+        text-align: right;
+      }
+
+      .hierarchy {
+        display: grid;
+        gap: 0;
+        margin: 5mm 0;
+      }
+
+      .hierarchy > div {
+        padding: 4mm 5mm;
+        color: var(--cream);
+        background: var(--deep);
+      }
+
+      .hierarchy > div + div {
+        margin: 0 10mm;
+        color: var(--deep);
+        background: var(--lime);
+      }
+
+      .hierarchy > div + div + div {
+        margin: 0 20mm;
+        background: var(--paper);
+        border: 0.35mm solid var(--line);
+      }
+
+      .quote {
+        margin: 5mm 0;
+        padding: 5mm 6mm;
+        color: var(--deep);
+        background: var(--cream);
+        border-left: 1.4mm solid var(--sage);
+        font-size: 11.5pt;
+        line-height: 1.5;
+      }
+
+      .definition-list {
+        display: grid;
+        grid-template-columns: 36mm 1fr;
+        margin: 4mm 0;
+        border-top: 0.35mm solid var(--line);
+      }
+
+      .definition-list dt,
+      .definition-list dd {
+        margin: 0;
+        padding: 3mm 0;
+        border-bottom: 0.35mm solid var(--line);
+      }
+
+      .definition-list dt {
+        color: var(--deep);
+        font-weight: 800;
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5mm 6mm;
+        margin: 4mm 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        position: relative;
+        padding-left: 6mm;
+      }
+
+      .checklist li::before {
+        position: absolute;
+        top: 0.2mm;
+        left: 0;
+        color: var(--sage);
+        content: "●";
+      }
+
+      .cover {
+        display: block;
+        padding: 0;
+        background: #f5f9f7;
+      }
+
+      .cover-top {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 48mm;
+        padding: 14mm 19mm;
+        color: var(--cream);
+        background: var(--deep);
+      }
+
+      .cover-top strong {
+        display: block;
+        margin-bottom: 1mm;
+        color: var(--cream);
+        font-size: 21pt;
+      }
+
+      .cover-top span {
+        font-size: 11pt;
+      }
+
+      .cover-top img {
+        width: 31mm;
+        height: 31mm;
+        object-fit: contain;
+      }
+
+      .cover-main {
+        padding: 13mm 19mm;
+      }
+
+      .cover-main h1 {
+        max-width: 160mm;
+        margin-bottom: 6mm;
+      }
+
+      .cover-subtitle {
+        max-width: 158mm;
+        color: #344c47;
+        font-size: 14pt;
+        line-height: 1.45;
+      }
+
+      .cover-box {
+        margin-top: 12mm;
+        padding: 6mm;
+        background: var(--mist);
+        border: 0.4mm solid var(--sage);
+      }
+
+      .cover-box strong {
+        display: block;
+        margin-bottom: 2mm;
+        font-size: 12pt;
+      }
+
+      .cover-contact {
+        position: absolute;
+        right: 19mm;
+        bottom: 27mm;
+        left: 19mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      .cover-contact p {
+        margin: 0;
+      }
+
+      .cover-contact > div {
+        min-width: 55mm;
+      }
+
+      .cover-contact > div p {
+        white-space: nowrap;
+      }
+
+      .cover-disclaimer {
+        max-width: 115mm;
+        color: #62706d;
+        font-size: 8pt;
+      }
+
+      .contents {
+        columns: 2;
+        column-gap: 8mm;
+        margin: 4mm 0 6mm;
+        padding: 0;
+        list-style: none;
+      }
+
+      .contents li {
+        break-inside: avoid;
+        padding: 2.2mm 0;
+        border-top: 0.3mm solid var(--line);
+      }
+
+      .contents strong {
+        display: inline-block;
+        width: 7mm;
+      }
+
+      .reference-list {
+        margin: 3mm 0;
+        padding: 0;
+        list-style: none;
+        font-size: 8pt;
+        line-height: 1.28;
+      }
+
+      .reference-list li {
+        margin-bottom: 3mm;
+        padding-bottom: 2.5mm;
+        border-bottom: 0.25mm solid var(--line);
+      }
+
+      .reference-list a {
+        overflow-wrap: anywhere;
+      }
+
+      @media print {
+        html,
+        body {
+          background: transparent;
+        }
+
+        .page {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page cover">
+      <div class="cover-top">
+        <div>
+          <strong>Interdato</strong>
+          <span>Sostenibilidad Digital y ESG</span>
+        </div>
+        <img src="../assets/branding/interdato-seal.png" alt="">
+      </div>
+      <div class="cover-main">
+        <p class="eyebrow">Whitepaper ejecutivo · guía preliminar</p>
+        <h1>Emisiones digitales en ESG</h1>
+        <p class="cover-subtitle">
+          Cómo delimitar, estimar y presentar la huella de carbono de los activos y
+          actividades digitales de una organización.
+        </p>
+        <div class="cover-box">
+          <strong>Idea central</strong>
+          <p>
+            La huella digital no es un alcance separado. Es un subinventario que identifica
+            emisiones tecnológicas dentro de los Alcances 1, 2 y 3 del inventario corporativo
+            de gases de efecto invernadero.
+          </p>
+        </div>
+      </div>
+      <div class="cover-contact">
+        <div>
+          <p><strong>Preparado por Interdato</strong></p>
+          <p>contacto@interdato.com · interdato.com</p>
+        </div>
+        <p class="cover-disclaimer">
+          Documento introductorio de divulgación comercial. La clasificación definitiva
+          requiere validar fronteras, contratos, políticas contables y criterios aplicables
+          a cada organización.
+        </p>
+      </div>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">Resumen ejecutivo</p>
+      <h2>Una apertura del inventario de GEI, no una cifra paralela</h2>
+      <p class="lead">
+        Servidores, redes, nube, SaaS, almacenamiento, inteligencia artificial, dispositivos y
+        residuos electrónicos generan emisiones en distintos puntos de la operación y de la
+        cadena de valor. Para reportarlas con claridad, primero se delimita la actividad digital
+        y después se asigna cada fuente al alcance corporativo que corresponde.
+      </p>
+      <div class="callout">
+        <p class="big">Huella digital = parte del inventario corporativo</p>
+        <p>
+          El total digital debe reconciliarse con los Alcances 1, 2 y 3 ya divulgados. No debe
+          sumarse nuevamente ni presentarse como “Alcance 4”.
+        </p>
+      </div>
+      <h3>Contenido</h3>
+      <ol class="contents">
+        <li><strong>1</strong> Principio reportable</li>
+        <li><strong>2</strong> Activos y actividades incluidos</li>
+        <li><strong>3</strong> Clasificación por alcance</li>
+        <li><strong>4</strong> Datos para estimar una línea base</li>
+        <li><strong>5</strong> Resultados para el reporte ESG</li>
+        <li><strong>6</strong> Calidad, incertidumbre y gobierno</li>
+        <li><strong>7</strong> Ruta de adopción</li>
+        <li><strong>8</strong> Narrativa y cautelas</li>
+        <li><strong>9</strong> Referencias públicas</li>
+      </ol>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">Delimitar</span>
+          <h3>Qué es digital</h3>
+          <p>Definir activos, servicios, actividades, periodo, límites y exclusiones.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Estimar</span>
+          <h3>Cuánto emite</h3>
+          <p>Combinar datos de actividad, información de proveedores y factores de emisión.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Reconciliar</span>
+          <h3>Dónde se reporta</h3>
+          <p>Asignar cada fuente a Alcance 1, 2 o una categoría pertinente de Alcance 3.</p>
+        </article>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>02</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">1. Principio reportable</p>
+      <h2>¿Dónde deben aparecer las emisiones digitales?</h2>
+      <p class="lead">
+        En la sección ambiental, dentro de cambio climático y del inventario corporativo de
+        emisiones de GEI. La subsección “Huella de carbono digital” explica qué parte del
+        inventario proviene de activos y actividades tecnológicas.
+      </p>
+      <div class="hierarchy">
+        <div><strong>Reporte ESG · Ambiental · Cambio climático</strong></div>
+        <div><strong>Inventario corporativo:</strong> Alcance 1 + Alcance 2 + Alcance 3</div>
+        <div><strong>Subinventario digital:</strong> desglose reconciliado por activo, servicio, alcance y categoría</div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Evitar</span>
+          <h3>Un “alcance digital” independiente</h3>
+          <p>
+            Crearía una categoría ajena al GHG Protocol y puede provocar que las mismas
+            emisiones se sumen dos veces.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">Recomendado</span>
+          <h3>Un subinventario trazable</h3>
+          <p>
+            Permite mostrar la cifra digital y, debajo, exactamente en qué alcance y categoría
+            corporativa fue contabilizada.
+          </p>
+        </article>
+      </div>
+      <h3 style="margin-top: 6mm;">Tres reglas de consistencia</h3>
+      <ol class="steps">
+        <li>
+          <span>1</span>
+          <div><strong>Misma frontera.</strong> Utilizar la frontera organizacional y operacional definida para el inventario general.</div>
+        </li>
+        <li>
+          <span>2</span>
+          <div><strong>Mutuamente excluyente.</strong> Una emisión se registra una sola vez dentro del inventario de la organización.</div>
+        </li>
+        <li>
+          <span>3</span>
+          <div><strong>Reconciliación.</strong> El total digital debe poder rastrearse hacia los totales de Alcance 1, 2 y 3.</div>
+        </li>
+      </ol>
+      <div class="note">
+        <p>
+          IFRS S2 requiere divulgar emisiones de Alcance 1, 2 y 3 y las categorías de Alcance 3
+          incluidas. ESRS E1 contempla, cuando sea material, abrir los servicios adquiridos de
+          nube y centros de datos dentro de Alcance 3, categoría 1.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>03</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">2. Activos y actividades incluidos</p>
+      <h2>Construir el perímetro digital antes de calcular</h2>
+      <p class="lead">
+        El punto de partida es un inventario de fuentes digitales. La selección debe responder
+        a materialidad, disponibilidad de datos y capacidad de gestión, manteniendo explícitas
+        las exclusiones.
+      </p>
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Infraestructura propia</span>
+          <h3>Operación bajo control</h3>
+          <ul>
+            <li>Servidores, cuartos de TI y centros de datos.</li>
+            <li>Redes, almacenamiento y equipos de respaldo.</li>
+            <li>Computadoras, pantallas y dispositivos corporativos.</li>
+            <li>Electricidad, combustibles y refrigerantes asociados.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">Servicios adquiridos</span>
+          <h3>Proveedores digitales</h3>
+          <ul>
+            <li>Nube pública, privada y colocation.</li>
+            <li>SaaS, hosting, CDN y herramientas de colaboración.</li>
+            <li>Procesamiento, almacenamiento y transferencia de datos.</li>
+            <li>Entrenamiento e inferencia de inteligencia artificial.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">Ciclo de vida</span>
+          <h3>Hardware y residuos</h3>
+          <ul>
+            <li>Fabricación de equipos comprados.</li>
+            <li>Reparación, reutilización y extensión de vida útil.</li>
+            <li>Tratamiento de residuos electrónicos.</li>
+            <li>Fin de vida de equipos tecnológicos vendidos.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag">Uso y cadena de valor</span>
+          <h3>Casos que requieren criterio</h3>
+          <ul>
+            <li>Teletrabajo y activos digitales arrendados.</li>
+            <li>Energía del cliente al usar productos vendidos.</li>
+            <li>Dispositivos de visitantes, redes downstream y publicidad.</li>
+            <li>Emisiones evitadas atribuibles a digitalización.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="note" style="margin-top: 5mm;">
+        <h3>Frontera recomendada para una primera estimación</h3>
+        <p>
+          Empezar con infraestructura propia, nube/hosting, SaaS relevante, hardware adquirido y
+          residuos electrónicos. Añadir teletrabajo, activos arrendados y uso downstream cuando
+          sean materiales y exista una categoría defendible.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>04</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">3. Clasificación por alcance</p>
+      <h2>Fuentes centrales de una huella digital</h2>
+      <p>
+        Esta tabla ofrece una asignación preliminar. La conclusión final depende de quién controla
+        la fuente, cómo se contrató el servicio y si el equipo se reconoce como gasto o activo.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Activo o actividad digital</th>
+            <th>Clasificación preliminar</th>
+            <th>Dato de partida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Diésel de generadores y fugas de refrigerantes en infraestructura propia</td>
+            <td class="scope">Alcance 1</td>
+            <td>Litros de combustible; kg y tipo de refrigerante</td>
+          </tr>
+          <tr>
+            <td>Electricidad para servidores, redes, equipos y oficinas bajo control</td>
+            <td class="scope">Alcance 2</td>
+            <td>kWh por instalación; información contractual de electricidad</td>
+          </tr>
+          <tr>
+            <td>Nube, SaaS, hosting, CDN, almacenamiento, IA y servicios de centros de datos externos</td>
+            <td class="scope">Alcance 3 · Cat. 1</td>
+            <td>Reporte del proveedor; consumo; uso o gasto</td>
+          </tr>
+          <tr>
+            <td>Fabricación de servidores, laptops, teléfonos, pantallas y equipos capitalizados</td>
+            <td class="scope">Alcance 3 · Cat. 2</td>
+            <td>Unidades, modelo, peso o huella de producto del proveedor</td>
+          </tr>
+          <tr>
+            <td>Equipos pequeños o compras tecnológicas reconocidas como gasto</td>
+            <td class="scope">Generalmente Alcance 3 · Cat. 1</td>
+            <td>Compras por tipo, unidades o gasto</td>
+          </tr>
+          <tr>
+            <td>Tratamiento de residuos electrónicos generados en las operaciones</td>
+            <td class="scope">Alcance 3 · Cat. 5</td>
+            <td>kg por tipo de residuo y método de tratamiento</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid-2">
+        <div class="note">
+          <h3>Servidor propio</h3>
+          <p>
+            Puede generar Alcance 2 por electricidad, categoría 2 por fabricación, categoría 3
+            por emisiones upstream de energía y categoría 5 al convertirse en residuo.
+          </p>
+        </div>
+        <div class="note">
+          <h3>Aplicación en la nube</h3>
+          <p>
+            Para la empresa usuaria, el servicio suele clasificarse en Alcance 3, categoría 1.
+            El proveedor contabiliza parte de la operación en sus propios Alcances 1 y 2.
+          </p>
+        </div>
+      </div>
+      <p class="small" style="margin-top: 4mm;">
+        En el inventario de GEI, las emisiones incorporadas de bienes de capital se contabilizan
+        conforme al periodo y límites del estándar aplicable; no deben confundirse con la
+        depreciación financiera del activo.
+      </p>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>05</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">3. Clasificación por alcance · continuación</p>
+      <h2>Casos que dependen de la operación y del modelo de negocio</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Caso digital</th>
+            <th>Posible clasificación</th>
+            <th>Pregunta de validación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Emisiones upstream de electricidad y pérdidas de transmisión no incluidas en Alcance 2</td>
+            <td class="scope">Alcance 3 · Cat. 3</td>
+            <td>¿El factor de Alcance 2 ya incorpora componentes de ciclo de vida?</td>
+          </tr>
+          <tr>
+            <td>Electricidad utilizada por empleados durante el teletrabajo</td>
+            <td class="scope">Puede ser Cat. 7</td>
+            <td>¿Es material y existe un método consistente de estimación?</td>
+          </tr>
+          <tr>
+            <td>Equipos o infraestructura arrendada fuera del límite de control operacional</td>
+            <td class="scope">Puede ser Cat. 8</td>
+            <td>¿Quién controla la operación y dónde se registra el activo?</td>
+          </tr>
+          <tr>
+            <td>Energía del cliente al usar dispositivos, software o productos digitales vendidos</td>
+            <td class="scope">Puede ser Cat. 11</td>
+            <td>¿Es un producto final vendido y el uso energético es material?</td>
+          </tr>
+          <tr>
+            <td>Fin de vida de dispositivos tecnológicos vendidos</td>
+            <td class="scope">Alcance 3 · Cat. 12</td>
+            <td>¿Qué volumen se vendió y cuál es el tratamiento esperado?</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <h3>Sitios web, publicidad y canales gratuitos</h3>
+        <p>
+          La energía de dispositivos de visitantes y redes downstream tiene un tratamiento menos
+          uniforme. Puede estimarse como información adicional de huella digital, pero no debe
+          incorporarse automáticamente al inventario obligatorio sin justificar frontera,
+          categoría, método y riesgo de doble conteo.
+        </p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Doble conteo</span>
+          <h3>Dentro de una organización</h3>
+          <p>
+            Los alcances y categorías deben ser mutuamente excluyentes. Cada fuente se registra
+            una sola vez y se referencia donde corresponda.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">Cadena de valor</span>
+          <h3>Entre proveedor y cliente</h3>
+          <p>
+            La misma emisión física puede aparecer en inventarios de empresas distintas bajo
+            alcances diferentes. Esa es la lógica normal de la contabilidad de cadena de valor.
+          </p>
+        </article>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>06</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">4. Datos para estimar una línea base</p>
+      <h2>De la actividad digital a toneladas de CO₂e</h2>
+      <ol class="steps">
+        <li><span>1</span><div><strong>Definir frontera y periodo.</strong> Alinear entidades, operaciones, año base, criterio de control y moneda/unidades.</div></li>
+        <li><span>2</span><div><strong>Inventariar fuentes.</strong> Relacionar centros de costo, proveedores, activos, servicios y residuos con responsables de dato.</div></li>
+        <li><span>3</span><div><strong>Recopilar actividad.</strong> Priorizar kWh, kg, unidades y uso; recurrir a gasto cuando no exista un dato físico mejor.</div></li>
+        <li><span>4</span><div><strong>Aplicar factores.</strong> Documentar origen, año, geografía, unidad, gases incluidos y método de asignación.</div></li>
+        <li><span>5</span><div><strong>Reconciliar y revisar.</strong> Evitar duplicados, evaluar cobertura y conectar cada resultado digital con el inventario general.</div></li>
+      </ol>
+      <table>
+        <thead>
+          <tr>
+            <th>Fuente</th>
+            <th>Dato preferido</th>
+            <th>Alternativa preliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Electricidad propia</td>
+            <td>Medición o factura en kWh por instalación</td>
+            <td>Asignación por superficie, equipos u ocupación</td>
+          </tr>
+          <tr>
+            <td>Nube y centros de datos</td>
+            <td>Reporte de emisiones o energía del proveedor</td>
+            <td>Uso por servicio/región o estimación basada en gasto</td>
+          </tr>
+          <tr>
+            <td>SaaS y servicios digitales</td>
+            <td>Dato específico del proveedor</td>
+            <td>Usuarios, transacciones, almacenamiento o gasto</td>
+          </tr>
+          <tr>
+            <td>Hardware</td>
+            <td>Huella de producto o EPD por modelo</td>
+            <td>Unidades/peso por categoría y factor secundario</td>
+          </tr>
+          <tr>
+            <td>Residuos electrónicos</td>
+            <td>Pesaje y certificado por tratamiento</td>
+            <td>Unidades retiradas y peso promedio</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note">
+        <h3>Fórmula conceptual</h3>
+        <p><strong>Dato de actividad × factor de emisión = emisiones estimadas.</strong></p>
+        <p class="small">
+          En asignaciones de proveedores compartidos pueden intervenir reglas adicionales por
+          uso, capacidad, gasto, tiempo o participación contractual.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>07</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">5. Resultados para el reporte ESG</p>
+      <h2>Cómo debería verse la huella de carbono digital</h2>
+      <p>
+        La tabla digital se presenta como una apertura del inventario principal. Sus cifras ya
+        están incluidas en los totales corporativos de Alcance 1, 2 y 3.
+      </p>
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Componente digital</th>
+            <th>Alcance y categoría</th>
+            <th>tCO₂e</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Combustibles y refrigerantes de infraestructura propia</td><td>Alcance 1</td><td>X</td></tr>
+          <tr><td>Electricidad de infraestructura tecnológica propia</td><td>Alcance 2</td><td>X</td></tr>
+          <tr><td>Nube, hosting, SaaS y servicios digitales</td><td>Alcance 3 · Cat. 1</td><td>X</td></tr>
+          <tr><td>Equipos de usuario y hardware capitalizado</td><td>Alcance 3 · Cat. 2</td><td>X</td></tr>
+          <tr><td>Actividades upstream de energía</td><td>Alcance 3 · Cat. 3</td><td>X</td></tr>
+          <tr><td>Residuos electrónicos operativos</td><td>Alcance 3 · Cat. 5</td><td>X</td></tr>
+          <tr><td>Otras categorías digitales materiales</td><td>Cat. 7, 8, 11 o 12</td><td>X</td></tr>
+          <tr><td><strong>Total de emisiones digitales</strong></td><td><strong>Reconciliado con el inventario general</strong></td><td><strong>X</strong></td></tr>
+        </tbody>
+      </table>
+      <h3>Indicadores que dan contexto</h3>
+      <ul class="checklist">
+        <li>tCO₂e digitales totales.</li>
+        <li>% del inventario corporativo.</li>
+        <li>Operación frente a carbono incorporado.</li>
+        <li>% cubierto con datos de proveedor.</li>
+        <li>Intensidad por empleado, usuario o transacción.</li>
+        <li>Comparativo con año base y objetivo.</li>
+        <li>Exclusiones e incertidumbre estimada.</li>
+        <li>Acciones de reducción por fuente.</li>
+      </ul>
+      <div class="callout">
+        <h3>Emisiones evitadas: siempre por separado</h3>
+        <p>
+          Beneficios como viajes evitados por videollamadas no se restan del inventario. Si se
+          estiman, se divulgan en una sección distinta, con metodología, escenario de referencia,
+          periodo, límites y supuestos propios.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>08</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">6. Calidad, incertidumbre y gobierno</p>
+      <h2>Una estimación preliminar también debe ser transparente</h2>
+      <p class="lead">
+        El objetivo inicial no es aparentar precisión absoluta, sino producir una línea base
+        reproducible, explicar sus límites y crear un plan para sustituir supuestos por mejores
+        datos en cada ciclo.
+      </p>
+      <h3>Jerarquía práctica de datos</h3>
+      <div class="grid-2">
+        <article class="card">
+          <span class="card-number">1</span>
+          <h3>Dato específico</h3>
+          <p>Medición propia o reporte de emisiones del proveedor para el servicio contratado.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">2</span>
+          <h3>Dato de actividad</h3>
+          <p>kWh, kg, unidades, capacidad, horas de cómputo o transacciones con factor pertinente.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">3</span>
+          <h3>Modelo híbrido</h3>
+          <p>Combina datos primarios parciales con factores secundarios para cubrir brechas.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">4</span>
+          <h3>Estimación por gasto</h3>
+          <p>Útil para screening y cobertura inicial; suele tener mayor incertidumbre.</p>
+        </article>
+      </div>
+      <h3 style="margin-top: 6mm;">Controles mínimos</h3>
+      <ul class="checklist">
+        <li>Responsable por fuente de dato.</li>
+        <li>Periodo, unidad y moneda documentados.</li>
+        <li>Factor de emisión con versión y geografía.</li>
+        <li>Regla de asignación reproducible.</li>
+        <li>Control de duplicados entre alcances.</li>
+        <li>Reconciliación con compras, activos y energía.</li>
+        <li>Registro de exclusiones y justificación.</li>
+        <li>Revisión metodológica antes de divulgar.</li>
+      </ul>
+      <div class="note">
+        <p>
+          <strong>Advertencia:</strong> este marco es orientativo. No sustituye la aplicación de
+          requisitos regulatorios, políticas contables, asesoría especializada ni aseguramiento
+          externo. La organización debe validar su clasificación con quienes preparan y revisan
+          el inventario corporativo.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>09</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">7. Ruta de adopción</p>
+      <h2>De una estimación preliminar a un sistema de gestión</h2>
+      <div class="phase-grid">
+        <article class="card">
+          <span class="card-number">1</span>
+          <h3>Delimitar</h3>
+          <p>Mapa de activos, servicios, responsables, fronteras y fuentes de información.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">2</span>
+          <h3>Estimar</h3>
+          <p>Línea base por fuente digital con método, factores, cobertura e incertidumbre.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">3</span>
+          <h3>Reconciliar</h3>
+          <p>Asignación a Alcances 1, 2 y 3; tabla reportable y nota metodológica.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">4</span>
+          <h3>Reducir</h3>
+          <p>Objetivos, backlog, responsables, seguimiento y mejora de calidad del dato.</p>
+        </article>
+      </div>
+      <h3 style="margin-top: 7mm;">Modelo de acompañamiento de Interdato</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Qué resuelve</th>
+            <th>Entregable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diagnóstico</strong></td>
+            <td>Identifica fuentes digitales, disponibilidad de datos y criterios de frontera.</td>
+            <td>Mapa de fuentes y plan de medición.</td>
+          </tr>
+          <tr>
+            <td><strong>Línea base</strong></td>
+            <td>Estima emisiones por activo, actividad, proveedor, alcance y categoría.</td>
+            <td>Subinventario preliminar y memoria de cálculo.</td>
+          </tr>
+          <tr>
+            <td><strong>Integración ESG</strong></td>
+            <td>Conecta resultados con el inventario general y la narrativa climática.</td>
+            <td>Tabla, indicadores y nota metodológica.</td>
+          </tr>
+          <tr>
+            <td><strong>Plan de reducción</strong></td>
+            <td>Prioriza nube, software, datos, hardware, compras y residuos.</td>
+            <td>Backlog, objetivos y tablero de seguimiento.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <h3>Resultado esperado</h3>
+        <p>
+          Una organización capaz de explicar cuánto emite su operación digital, dónde está
+          contabilizada esa cifra, con qué calidad de datos se estimó y qué decisiones está
+          tomando para reducirla.
+        </p>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>10</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">8. Narrativa y cautelas</p>
+      <h2>Ejemplo de divulgación preliminar</h2>
+      <div class="quote">
+        Las emisiones derivadas de los activos y actividades digitales se encuentran integradas
+        en el inventario corporativo de GEI. Durante el periodo representaron
+        <strong>X tCO₂e</strong>, equivalentes al <strong>X%</strong> de las emisiones totales.
+        Corresponden principalmente al Alcance 2 por el consumo eléctrico de infraestructura
+        tecnológica propia y al Alcance 3, categorías 1, 2 y 5, por servicios de nube,
+        fabricación de equipos y gestión de residuos electrónicos.
+      </div>
+      <p>
+        El texto debe adaptarse a las fuentes realmente cubiertas, la materialidad y la
+        metodología de cada organización. Conviene acompañarlo con una tabla de desglose y una
+        nota sobre cobertura, exclusiones e incertidumbre.
+      </p>
+      <h3 style="margin-top: 5mm;">Comunicación responsable</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Evitar</th>
+            <th>Preferir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>“Nuestra operación digital es cero emisiones”.</td>
+            <td>“Estimamos y reducimos fuentes digitales con límites y supuestos documentados”.</td>
+          </tr>
+          <tr>
+            <td>“Migrar a la nube elimina el impacto”.</td>
+            <td>“Medimos los servicios cloud dentro de la cadena de valor y optimizamos su uso”.</td>
+          </tr>
+          <tr>
+            <td>“La digitalización compensó nuestras emisiones”.</td>
+            <td>“Las emisiones evitadas se estiman y comunican separadamente del inventario”.</td>
+          </tr>
+          <tr>
+            <td>“El cálculo es exacto”.</td>
+            <td>“La línea base tiene una cobertura e incertidumbre declaradas y mejorará con datos primarios”.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid-2">
+        <article class="card">
+          <span class="tag">Cifra defendible</span>
+          <h3>Debe explicar</h3>
+          <p>Periodo, frontera, fuentes incluidas, factores, método, exclusiones y responsable.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Decisión útil</span>
+          <h3>Debe conducir a</h3>
+          <p>Reducción de consumo, mejores compras, mayor vida útil y optimización de servicios.</p>
+        </article>
+      </div>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>11</span></footer>
+    </section>
+
+    <section class="page">
+      <header class="page-header"><strong>Interdato</strong><span>Emisiones digitales en ESG</span></header>
+      <p class="eyebrow">9. Referencias públicas</p>
+      <h2>Fuentes para profundizar</h2>
+      <ul class="reference-list">
+        <li>
+          <strong>[1] GHG Protocol.</strong> Corporate Standard y estándares de contabilidad de
+          emisiones corporativas.<br>
+          <a href="https://ghgprotocol.org/standards-guidance">https://ghgprotocol.org/standards-guidance</a>
+        </li>
+        <li>
+          <strong>[2] GHG Protocol.</strong> Technical Guidance for Calculating Scope 3
+          Emissions; métodos para las 15 categorías de la cadena de valor.<br>
+          <a href="https://ghgprotocol.org/scope-3-calculation-guidance-2">https://ghgprotocol.org/scope-3-calculation-guidance-2</a>
+        </li>
+        <li>
+          <strong>[3] GHG Protocol.</strong> Scope 3 Frequently Asked Questions; fronteras,
+          doble conteo y tratamiento separado de emisiones evitadas.<br>
+          <a href="https://ghgprotocol.org/scope-3-frequently-asked-questions-0">https://ghgprotocol.org/scope-3-frequently-asked-questions-0</a>
+        </li>
+        <li>
+          <strong>[4] IFRS Foundation.</strong> Greenhouse Gas Emissions Disclosure Requirements
+          Applying IFRS S2 Climate-related Disclosures.<br>
+          <a href="https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s2/ghg-ifrs-s2-educational-material.pdf">Documento educativo sobre IFRS S2 y emisiones de GEI</a>
+        </li>
+        <li>
+          <strong>[5] Comisión Europea.</strong> Reglamento Delegado (UE) 2023/2772, ESRS E1
+          Climate Change; incluye la apertura opcional/material de nube y centros de datos en
+          Alcance 3, categoría 1.<br>
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R2772">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2772</a>
+        </li>
+        <li>
+          <strong>[6] IFRS Foundation.</strong> Introducción a ISSB e IFRS Sustainability
+          Disclosure Standards.<br>
+          <a href="https://www.ifrs.org/sustainability/knowledge-hub/introduction-to-issb-and-ifrs-sustainability-disclosure-standards/">IFRS Sustainability Knowledge Hub</a>
+        </li>
+      </ul>
+      <div class="callout">
+        <h3>Siguiente paso sugerido</h3>
+        <p>
+          Realizar un diagnóstico breve para identificar fuentes digitales, responsables,
+          disponibilidad de datos y categorías potenciales. Con ese mapa se puede construir una
+          línea base, reconciliarla con el inventario corporativo y priorizar mejoras.
+        </p>
+      </div>
+      <div class="note">
+        <h3>Interdato</h3>
+        <p>
+          Sostenibilidad digital, estimación de emisiones de activos y actividades digitales,
+          integración ESG y mejora operativa.
+        </p>
+        <p><strong>contacto@interdato.com · interdato.com</strong></p>
+      </div>
+      <p class="small" style="margin-top: 5mm;">
+        Documento de orientación general. Las normas, interpretaciones y obligaciones pueden
+        cambiar y variar por jurisdicción, industria y periodo de reporte. Verifique siempre las
+        versiones vigentes y los requisitos aplicables.
+      </p>
+      <footer class="page-footer"><span>Whitepaper ejecutivo · Interdato</span><span>12</span></footer>
+    </section>
+  </body>
+</html>

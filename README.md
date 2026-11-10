@@ -84,3 +84,7 @@ Chrome instalado:
 ```powershell
 .\scripts\build-propuesta.ps1
 ```
+
+## Seguridad y mantenimiento
+
+Consulta la [Política de seguridad](SECURITY.md) para reportar vulnerabilidades y conocer el alcance de los controles automáticos.
